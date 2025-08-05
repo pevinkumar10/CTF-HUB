@@ -4,22 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTF-HUB 🍵| Login</title>
+    <title>CTF-HUB 🍵| Chai</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <?php
     include_once "libs/loader.php";
     ?>
-    <style>
-        body {
-            background-color: #191e25;
-        }
-    </style>
 </head>
 
-<body class="text-white vh-100 d-flex align-items-center justify-content-center">
+<body>
     <?php
-    load_template('login');
+    load_template('nav');
+    load_template('tea');
     ?>
 </body>
 
