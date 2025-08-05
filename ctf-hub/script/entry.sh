@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cp /CTF-HUB/config/site.conf  /etc/apache2/sites-available/site.conf
+
+cp -r /CTF-HUB/src /var/www/html/ctf-hub
+
+a2dissite 000-default.conf && a2ensite site.conf
+
+service apache2 start
+
+tail -f /dev/null
