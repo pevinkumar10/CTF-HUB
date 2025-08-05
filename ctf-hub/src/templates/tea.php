@@ -7,7 +7,6 @@
         </header>
     </div>
 
-
     <!-- Product Cards -->
     <div class="container pb-5">
         <div class="row g-4">

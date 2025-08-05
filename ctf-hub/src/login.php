@@ -19,6 +19,20 @@
 
 <body class="text-white vh-100 d-flex align-items-center justify-content-center">
     <?php
+    if (isset($_POST["email"]) and isset($_POST["password"])) {
+        $user = $_POST["email"];
+        $pass = $_POST["password"];
+        $database_connection = db::get_connection();
+        $results = db::select_user($user);
+        $login_result = auth::login($results, $pass);
+        if ($login_result) {
+            $_SESSION['auth_token'] = "token1234"; // TODO: Generate auth token dynamicaly.
+            $_SESSION['username'] = $login_result;
+            header("Location: home.php");
+        } else {
+            print("Login not successfull");
+        }
+    }
     load_template('login');
     ?>
 </body>
