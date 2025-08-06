@@ -4,6 +4,7 @@ session_start();
 
 include_once __dir__ . "/../classes/db.class.php";
 include_once __dir__ . "/../classes/user.class.php";
+include_once __dir__ . "/../classes/product.class.php";
 
 function load_template($template_name, $variables = [])
 {

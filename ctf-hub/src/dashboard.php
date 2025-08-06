@@ -14,6 +14,24 @@
 
 <body>
     <?php
+    if (isset($_POST['name']) and isset($_POST['email']) and isset($_POST['phone']) and isset($_POST['city']) and isset($_POST['address'])) {
+        $uid = $_COOKIE['uid'];
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $city = $_POST['city'];
+        $address = $_POST['address'];
+        $result = user::update_profile($uid, $name, $email, $phone, $city, $address);
+
+        if ($result) {
+            $user_data = user::$user_data;
+            $_SESSION['session_data'] = $user_data;
+            print("Profile updated");
+            header('Refresh: 1');
+        } else {
+            print("Couldn't update profile!");
+        }
+    }
     load_template("nav");
     load_template('dashboard');
     ?>

@@ -1,5 +1,5 @@
-<div class="container col-xxl-8 px-5 py-5 min-vh-100">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+<div class="container col-xl-6 px-2 py-5 min-vh-100">
+    <div class="row flex-lg-row-reverse align-items-center mt-3 g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
             <img src="img/tea.jpg" class="d-block mx-lg-auto img-fluid shadow bg-body-tertiary" alt="Tea" width="650" height="500" loading="lazy">
         </div>
@@ -13,9 +13,17 @@
                 </div>
             <?php } else { ?>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <a class="text-decoration-none" href="/products.php"><button type="button" class="btn btn-outline-warning rounded-pill btn-lg px-4" style="color: white;">Explore</button></a>
+                    <a class="text-decoration-none" href="#products"><button type="button" class="btn btn-outline-warning rounded-pill btn-lg px-4" style="color: white;">Explore</button></a>
                 </div>
             <?php } ?>
+        </div>
+        <div class="container mt-5">
+            <div class="py-2 text-center rounded-3" style="background-color: #d7c770;">
+                <h1 class="display-5 fw-bold">WELCOME <?php echo htmlentities(strtoupper($_SESSION["session_data"]["name"])); ?></h1>
+                <p class="lead">
+                    This is a simple Bootstrap jumbotron that sits within a <code>container</code>, recreated with built-in utility classes.
+                </p>
+            </div>
         </div>
     </div>
 </div>

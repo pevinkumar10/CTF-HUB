@@ -1,4 +1,4 @@
-<div class="pt-3">
+<div class="pt-3" id="products">
     <!-- Header -->
     <div class="px-5">
         <header>
@@ -20,7 +20,11 @@
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
                         <button class="btn btn-warning w-100 m-2">Order Now</button>
-                        <button class="btn btn-warning w-100 m-2">Check availability</button>
+                        <?php if (isset($_SESSION['session_data'])) { ?>
+                            <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -34,7 +38,11 @@
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
                         <button class="btn btn-warning w-100 m-2">Order Now</button>
-                        <button class="btn btn-warning w-100 m-2">Check availability</button>
+                        <?php if (isset($_SESSION['session_data'])) { ?>
+                            <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -48,7 +56,11 @@
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
                         <button class="btn btn-warning w-100 m-2">Order Now</button>
-                        <button class="btn btn-warning w-100 m-2">Check availability</button>
+                        <?php if (isset($_SESSION['session_data'])) { ?>
+                            <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -61,7 +73,11 @@
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
                         <button class="btn btn-warning w-100 m-2">Order Now</button>
-                        <button class="btn btn-warning w-100 m-2">Check availability</button>
+                        <?php if (isset($_SESSION['session_data'])) { ?>
+                            <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -79,7 +95,11 @@
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
                         <button class="btn btn-warning w-100 m-2">Order Now</button>
-                        <button class="btn btn-warning w-100 m-2">Check availability</button>
+                        <?php if (isset($_SESSION['session_data'])) { ?>
+                            <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -92,7 +112,11 @@
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
                         <button class="btn btn-warning w-100 m-2">Order Now</button>
-                        <button class="btn btn-warning w-100 m-2">Check availability</button>
+                        <?php if (isset($_SESSION['session_data'])) { ?>
+                            <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -106,7 +130,11 @@
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
                         <button class="btn btn-warning w-100 m-2">Order Now</button>
-                        <button class="btn btn-warning w-100 m-2">Check availability</button>
+                        <?php if (isset($_SESSION['session_data'])) { ?>
+                            <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -120,7 +148,11 @@
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
                         <button class="btn btn-warning w-100 m-2">Order Now</button>
-                        <button class="btn btn-warning w-100 m-2">Check availability</button>
+                        <?php if (isset($_SESSION['session_data'])) { ?>
+                            <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

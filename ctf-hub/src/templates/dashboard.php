@@ -1,6 +1,6 @@
 <?php
 
-if ($_COOKIE['user_id']) {
+if (isset($_SESSION['session_data'])) {
 ?>
     <!-- Main Content -->
     <div class="container py-5">
@@ -15,26 +15,26 @@ if ($_COOKIE['user_id']) {
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label text-warning">Full Name</label>
-                                    <input type="text" class="form-control bg-dark text-white border-warning" value="Code Dev">
+                                    <input type="text" class="form-control bg-dark text-white border-warning" name="name" value="<?php echo htmlspecialchars($_SESSION["session_data"]["name"]); ?>">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label text-warning">Email</label>
-                                    <input type="email" class="form-control bg-dark text-white border-warning" value="you@chai.dev">
+                                    <input type="email" class="form-control bg-dark text-white border-warning" name="email" value="<?php echo htmlspecialchars($_SESSION["session_data"]["email"]); ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label text-warning">Phone</label>
-                                    <input type="text" class="form-control bg-dark text-white border-warning" value="+91 9876543210">
+                                    <input type="text" class="form-control bg-dark text-white border-warning" name="phone" value="<?php echo htmlspecialchars($_SESSION["session_data"]["phone"]); ?>">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label text-warning">City</label>
-                                    <input type="text" class="form-control bg-dark text-white border-warning" value="Mumbai">
+                                    <input type="text" class="form-control bg-dark text-white border-warning" name="city" value="<?php echo htmlspecialchars($_SESSION["session_data"]["city"]); ?>">
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label text-warning">Delivery Address</label>
-                                <textarea class="form-control bg-dark text-white border-warning" rows="2">123, Tea Street, Near Code Cafe</textarea>
+                                <textarea name="address" class="form-control bg-dark text-white border-warning" rows="2"><?php echo htmlspecialchars($_SESSION["session_data"]["address"]); ?></textarea>
                             </div>
                             <div class="d-grid">
                                 <button type="submit" class="btn btn-warning fw-bold">Save Changes</button>

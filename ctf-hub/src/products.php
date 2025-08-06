@@ -14,6 +14,15 @@
 
 <body>
     <?php
+    print_r($_GET);
+    if (isset($_GET['action'])) {
+        $action = $_GET['action'];
+        $name = $_GET['name'];
+        if ($action == "check_availability") {
+            $result = Products::get_available($name);
+            print_r($result);
+        }
+    }
     load_template('nav');
     load_template('tea');
     ?>

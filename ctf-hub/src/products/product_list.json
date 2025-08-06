@@ -1,0 +1,37 @@
+{
+    "tea" : {
+        "Kashmiri Kahwa":{
+            "quantity":100,
+            "total_orders":1000
+        },
+        "Tulsi Chai":{
+            "quantity":67,
+            "total_orders":423
+        },
+        "Butter Tea":{
+            "quantity":47,
+            "total_orders":340
+        },
+        "Sulaimani Chai":{
+            "quantity":433,
+            "total_orders":450
+        },
+        "Earl Grey tea":{
+            "quantity":143,
+            "total_orders":530
+        },
+        "Masala Chai":{
+            "quantity":12,
+            "total_orders":870
+        },
+        "Green Chai":{
+            "quantity":50,
+            "total_orders":840
+        },
+        "Herbal Fusion":{
+           "quantity":0,
+           "total_orders":1530
+        }
+
+    }
+}

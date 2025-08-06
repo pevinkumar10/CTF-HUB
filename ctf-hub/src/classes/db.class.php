@@ -31,10 +31,10 @@ class db
         }
     }
 
-    public static function select_user($user)
+    public static function select_user($email)
     {
         $conn = db::get_connection();
-        $sql = "SELECT * FROM `users` WHERE `email`='$user'LIMIT 1";
+        $sql = "SELECT * FROM `users` WHERE `email`='$email'LIMIT 1";
         $result = $conn->query($sql);
 
         if ($result) {
@@ -47,7 +47,7 @@ class db
     public static function insert_user($name, $email, $password, $phone, $city, $address)
     {
         $conn = db::get_connection();
-        $sql = "INSERT INTO `users` (`name`, `email`, `phone`, `password`, `is_verified`)
+        $sql = "INSERT INTO `users` (`id`,`name`, `email`, `password`,`phone` ,`city` , `address`)
 VALUES ('$name', '$email', '$phone', '$password', $city, $address, '1');";
         $result = $conn->query($sql);
 
@@ -56,5 +56,43 @@ VALUES ('$name', '$email', '$phone', '$password', $city, $address, '1');";
         } else {
             return true;
         }
+    }
+    public static function update_user($uid, $name, $email, $password, $phone, $city, $address)
+    {
+        $conn = db::get_connection();
+
+        $update_parts = [];
+
+        if (!empty($name)) {
+            $update_parts[] = "`name` = '$name'";
+        }
+        if (!empty($email)) {
+            $update_parts[] = "`email` = '$email'";
+        }
+        if (!empty($phone)) {
+            $update_parts[] = "`phone` = '$phone'";
+        }
+        if (!empty($password)) {
+            $update_parts[] = "`password` = '$password'";
+        }
+        if (!empty($city)) {
+            $update_parts[] = "`city` = '$city'";
+        }
+        if (!empty($address)) {
+            $update_parts[] = "`address` = '$address'";
+        }
+
+        if (empty($update_parts)) {
+            return false;
+        }
+
+        $update_query = implode(", ", $update_parts);
+
+        $sql = "UPDATE `users` SET $update_query WHERE `id` = $uid";
+
+        $result = $conn->query($sql);
+        print($result);
+
+        return $result ? true : false;
     }
 }
