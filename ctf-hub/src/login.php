@@ -26,14 +26,16 @@
         $results = db::select_user($user);
         $login_result = auth::login($results, $pass);
         if ($login_result) {
-            $_SESSION['auth_token'] = "token1234"; // TODO: Generate auth token dynamicaly.
-            $_SESSION['username'] = $login_result;
-            header("Location: home.php");
+            $_COOKIE['user_id'] = $login_result['id'];
+            $_SESSION['user'] = $login_result;
+            header("Location: /");
         } else {
-            print("Login not successfull");
+            print("Login failed");
+            header("Refresh: 3");
         }
+    } else {
+        load_template('login');
     }
-    load_template('login');
     ?>
 </body>
 

@@ -10,18 +10,20 @@ class auth
             while ($row = $result->fetch_assoc()) {
                 auth::$user_data = $row;
             }
-            $user_pass = auth::$user_data["password"];
-            if ($password == $user_pass) {
-                return auth::$user_data['username'];
+            $user_pass_hash = auth::$user_data["password"];
+            $password_hash = md5($password);
+            var_dump($user_pass_hash, $password_hash);
+            if ($password_hash == $user_pass_hash) {
+                return auth::$user_data;
             }
         } else {
             return false;
         }
     }
 
-    public static function signup($name, $username, $email, $phone, $password)
+    public static function signup($name, $email, $password, $phone, $city, $address)
     {
-        $result = db::insert_user($name, $username, $email, $phone, $password);
+        $result = db::insert_user($name, $email, $password, $phone, $city, $address);
         if ($result) {
             return $result;
         } else {

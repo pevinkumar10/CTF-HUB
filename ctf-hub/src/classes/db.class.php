@@ -6,12 +6,11 @@ class db
 
     private static function create_connection()
     {
-        $database_config_data = get_env("database");
-        $servername = $database_config_data["servername"];
-        $username = $database_config_data["username"];
-        $password = $database_config_data["password"];
-        $db = $database_config_data["db"];
 
+        $servername = "127.0.0.1";
+        $username = getenv("USERNAME");
+        $password = getenv("PASSWORD");
+        $db = getenv("DB");
         $conn = new mysqli($servername, $username, $password, $db);
 
         if ($conn->connect_error) {
@@ -35,7 +34,7 @@ class db
     public static function select_user($user)
     {
         $conn = db::get_connection();
-        $sql = "SELECT * FROM `users` WHERE `email`='$user' OR `username`='$user' LIMIT 1";
+        $sql = "SELECT * FROM `users` WHERE `email`='$user'LIMIT 1";
         $result = $conn->query($sql);
 
         if ($result) {
@@ -45,11 +44,11 @@ class db
         }
     }
 
-    public static function insert_user($name, $username, $email, $phone, $password)
+    public static function insert_user($name, $email, $password, $phone, $city, $address)
     {
         $conn = db::get_connection();
-        $sql = "INSERT INTO `users` (`name`, `username`, `email`, `phone`, `password`, `is_verified`)
-VALUES ('$name', '$username', '$email', '$phone', '$password', '0');";
+        $sql = "INSERT INTO `users` (`name`, `email`, `phone`, `password`, `is_verified`)
+VALUES ('$name', '$email', '$phone', '$password', $city, $address, '1');";
         $result = $conn->query($sql);
 
         if (!$result) {

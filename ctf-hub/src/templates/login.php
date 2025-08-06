@@ -7,12 +7,12 @@
       <form action="/login.php" method="post">
           <div class="mb-3">
               <label for="email" class="form-label text-warning">Email</label>
-              <input type="email" class="form-control border border-warning text-black" id="email" placeholder="example@gmail.com" name="email" value="" required>
+              <input type="email" class="form-control border border-warning text-black" placeholder="example@gmail.com" name="email" value="" required>
           </div>
 
           <div class="mb-3">
               <label for="password" class="form-label text-warning">Password</label>
-              <input type="password" class="form-control border border-warning text-black" id="password" placeholder="* * * * * * * *" name="email" value="" required>
+              <input type="password" class="form-control border border-warning text-black" placeholder="* * * * * * * *" name="password" value="" required>
           </div>
 
           <div class="d-grid mb-3">

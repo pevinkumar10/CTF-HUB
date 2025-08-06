@@ -19,7 +19,8 @@
                         <p class="card-text">A delicate green tea infused with saffron, almonds, and spices — warmth from the valleys of Kashmir.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Check availability</button>
                     </div>
                 </div>
             </div>
@@ -32,7 +33,8 @@
                         <p class="card-text">A soothing herbal blend with holy basil, known to calm the mind and boost immunity.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Check availability</button>
                     </div>
                 </div>
             </div>
@@ -45,7 +47,8 @@
                         <p class="card-text">A rich, salty Himalayan brew made with tea, butter, and salt — fuel for high-altitude thinkers.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Check availability</button>
                     </div>
                 </div>
             </div>
@@ -57,7 +60,8 @@
                         <p class="card-text">A fragrant black tea infused with lemon and spices, perfect for a refreshing break.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Check availability</button>
                     </div>
                 </div>
             </div>
@@ -74,7 +78,8 @@
                         <p class="card-text"> A bold black tea flavored with bergamot citrus, bringing elegance to your everyday sip.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Check availability</button>
                     </div>
                 </div>
             </div>
@@ -86,7 +91,8 @@
                         <p class="card-text">A strong and spiced brew to keep you sharp through long debug sessions.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Check availability</button>
                     </div>
                 </div>
             </div>
@@ -99,7 +105,8 @@
                         <p class="card-text">Light, fresh, and calming — perfect for focused coding and mindful commits.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Check availability</button>
                     </div>
                 </div>
             </div>
@@ -112,7 +119,8 @@
                         <p class="card-text">Caffeine-free, stress-free — ideal for late-night brainstorming without burnout.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <button class="btn btn-warning w-100 m-2">Check availability</button>
                     </div>
                 </div>
             </div>
