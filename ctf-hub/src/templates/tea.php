@@ -3,7 +3,7 @@
     <div class="px-5">
         <header>
             <h1 class="fw-bold text-white">Explore Our Teas</h1>
-            <p class="text-warning">Carefully brewed for coders, creators, and curious minds.</p>
+            <p class="text-warning"><i>Carefully brewed for coders, creators, and curious minds.</i></p>
         </header>
     </div>
 

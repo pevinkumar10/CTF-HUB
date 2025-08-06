@@ -14,15 +14,19 @@
 
 <body>
     <?php
-    $root_dir = "templates/";
-    $page = $_GET['page'];
+    if (isset($_GET['page'])) {
+        $root_dir = "templates/";
+        $page = $_GET['page'];
 
-    $include_file = $root_dir . $page . ".php";
-    if (file_exists($include_file)) {
-        include($include_file);
+        $include_file = $root_dir . $page . ".php";
+        if (file_exists($include_file)) {
+            include($include_file);
+        } else {
+            $include_file = $root_dir . "404.php";
+            include($include_file);
+        }
     } else {
-        $include_file = $root_dir . "404.php";
-        include($include_file);
+        load_template('about');
     }
     ?>
 </body>
