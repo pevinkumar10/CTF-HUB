@@ -7,7 +7,7 @@ class db
     private static function create_connection()
     {
 
-        $servername = "127.0.0.1";
+        $servername = getenv("SERVERNAME");
         $username = getenv("USERNAME");
         $password = getenv("PASSWORD");
         $db = getenv("DB");

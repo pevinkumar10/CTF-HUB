@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # === Config ===
-DB_NAME="ctf_hub"
-NEW_USER="ctfhub"
-NEW_PASS="ctfhubpass123"
-ROOT_PASS="\n"
+DB_NAME="$DB"
+NEW_USER="$USERNAME"
+NEW_PASS="$PASSWORD"
+ROOT_PASS=" "
 
 # === Creating DB, USER ===
-mysql -u root -p${ROOT_PASS} <<EOF
+mysql -u root -p ${ROOT_PASS} <<EOF
 CREATE DATABASE IF NOT EXISTS ${DB_NAME};
 CREATE USER IF NOT EXISTS '${NEW_USER}'@'localhost' IDENTIFIED BY '${NEW_PASS}';
 GRANT ALL PRIVILEGES ON ${DB_NAME}.* TO '${NEW_USER}'@'localhost';

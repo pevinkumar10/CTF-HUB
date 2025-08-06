@@ -4,9 +4,10 @@ ENV TZ=Asia/kolkata
 ENV DEBIAN_FRONTEND=noninteractive 
 
 # Mysql env configuration
-ENV SERVERNAME=localhost
+ENV SERVERNAME=127.0.0.1
 ENV USERNAME=ctfhub
 ENV PASSWORD=ctfhubpass123
+ENV DB=ctf_hub
 
 WORKDIR /CTF-HUB
 
