@@ -25,6 +25,7 @@
     }
     load_template('nav');
     load_template('tea');
+    load_template('footer');
     ?>
 </body>
 

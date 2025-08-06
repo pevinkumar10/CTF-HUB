@@ -16,9 +16,7 @@
     <?php
     if (isset($_POST['name']) and isset($_POST['email']) and isset($_POST['phone']) and isset($_POST['city']) and isset($_POST['address'])) {
 
-        $uid = $_COOKIE['uid'];
-        $uid = str_replace("2006p10-jsctfhubnc-1018", "", $uid);
-
+        $uid = $_SESSION['id'];
         $name = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
@@ -37,6 +35,7 @@
     }
     load_template("nav");
     load_template('dashboard');
+    load_template('footer');
     ?>
 </body>
 

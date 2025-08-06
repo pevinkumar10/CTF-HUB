@@ -1,5 +1,5 @@
-<div class="container py-5">
-    <div class="row">
+<div class="container py-4">
+    <div class="row pt-5">
 
         <!-- Left Column: About Content -->
         <div class="col-md-7 mb-4">

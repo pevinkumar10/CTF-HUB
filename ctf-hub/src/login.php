@@ -26,12 +26,11 @@
         $results = db::select_user($user);
         $login_result = user::login($results, $pass);
         if ($login_result) {
-            setcookie("uid", '2006p10-jsctfhubnc-1018' . $login_result['id'], time() + (86400 * 1), "/");
             $_SESSION["session_data"] = $login_result;
             load_template('login');
     ?>
             <div class="alert alert-success position-fixed bottom-0 end-0 m-4 shadow" role="alert" style="z-index: 9999;">
-                Login successfull,You will be redirected in 3 seconds
+                Login successful,You will be redirected in 3 seconds
             </div>
         <?php
             header('Refresh: 3, URL=/');

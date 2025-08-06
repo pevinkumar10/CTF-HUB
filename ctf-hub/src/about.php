@@ -26,6 +26,7 @@
             include($include_file);
         }
     } else {
+        load_template('nav');
         load_template('about');
     }
     ?>

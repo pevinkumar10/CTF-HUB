@@ -95,4 +95,7 @@ VALUES ('$name', '$email', '$password');";
 
         return $result ? true : false;
     }
+    public static function place_order($session_user_id) {}
+
+    public static function get_orders($uid) {}
 }
