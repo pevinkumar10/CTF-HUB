@@ -7,12 +7,12 @@
               <form action="/signup.php" method="post">
                   <div class="mb-3">
                       <label for="name" class="form-label text-warning">Full Name</label>
-                      <input type="text" class="form-control border border-warning text-white" id="name" placeholder="e.g. james" name="name" value="" required>
+                      <input type="text" class="form-control border border-warning text-black" id="name" placeholder="e.g. james" name="name" value="" required>
                   </div>
 
                   <div class="mb-3">
                       <label for="email" class="form-label text-warning">Email</label>
-                      <input type="email" class="form-control border border-warning text-white" id="email" placeholder="james@gmail.com" name="email" value="" required>
+                      <input type="email" class="form-control border border-warning text-black" id="email" placeholder="james@gmail.com" name="email" value="" required>
                   </div>
 
                   <div class="mb-3">
@@ -26,11 +26,12 @@
                   </div>
 
                   <div class="d-grid mb-3">
+                      <input type="hidden" name="method" value="signup">
                       <button type="submit" class="btn btn-warning fw-semibold">Signup</button>
                   </div>
 
                   <div class="text-center">
-                      <p class="text-white-50">Already have an account? <a href="login.php" class="text-warning text-decoration-none">Login</a></p>
+                      <p class="text-white-50">Already have an account? <a href="/login.php" class="text-warning text-decoration-none">Login</a></p>
                   </div>
               </form>
           </div>

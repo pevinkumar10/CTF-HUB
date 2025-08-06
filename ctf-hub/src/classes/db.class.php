@@ -44,11 +44,11 @@ class db
         }
     }
 
-    public static function insert_user($name, $email, $password, $phone, $city, $address)
+    public static function insert_user($name, $email, $password)
     {
         $conn = db::get_connection();
-        $sql = "INSERT INTO `users` (`id`,`name`, `email`, `password`,`phone` ,`city` , `address`)
-VALUES ('$name', '$email', '$phone', '$password', $city, $address, '1');";
+        $sql = "INSERT INTO `users` (`name`, `email`, `password`)
+VALUES ('$name', '$email', '$password');";
         $result = $conn->query($sql);
 
         if (!$result) {

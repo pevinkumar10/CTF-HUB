@@ -20,9 +20,9 @@ class user
         }
     }
 
-    public static function signup($name, $email, $password, $phone, $city, $address)
+    public static function signup($name, $email, $password)
     {
-        $result = db::insert_user($name, $email, $password, $phone, $city, $address);
+        $result = db::insert_user($name, $email, $password);
         if ($result) {
             return $result;
         } else {

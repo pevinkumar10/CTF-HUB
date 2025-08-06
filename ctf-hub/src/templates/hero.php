@@ -18,7 +18,7 @@
             <?php } ?>
         </div>
         <div class="container mt-5">
-            <div class="py-2 text-center rounded-3" style="background-color: #d7c770;">
+            <div class="py-2 text-center rounded-3" style="background-color: #f3d944ff;">
                 <h1 class="display-5 fw-bold">WELCOME <?php echo htmlentities(strtoupper($_SESSION["session_data"]["name"])); ?></h1>
                 <p class="lead">
                     This is a simple Bootstrap jumbotron that sits within a <code>container</code>, recreated with built-in utility classes.
