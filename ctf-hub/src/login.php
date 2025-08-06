@@ -26,12 +26,13 @@
         $results = db::select_user($user);
         $login_result = auth::login($results, $pass);
         if ($login_result) {
-            $_COOKIE['user_id'] = $login_result['id'];
-            $_SESSION['user'] = $login_result;
-            header("Location: /");
+            setcookie("user_id", $login_result['id'], time() + (86400 * 1), "/");
+            $_SESSION["session_data"] = $login_result;
+            print("Login successfull\nYou will be redirected in 3 seconds.");
+            header('Refresh: 3, URL=/');
         } else {
-            print("Login failed");
-            header("Refresh: 3");
+            print("Login not successfull");
+            header('location: /');
         }
     } else {
         load_template('login');

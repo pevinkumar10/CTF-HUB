@@ -47,7 +47,10 @@ if ($_COOKIE['user_id']) {
             <!-- Right Column-->
             <div class="col-md-4">
                 <div class="card bg-dark border border-warning text-white">
-                    <div class="card-body">
+                    <div>
+                        <img src="img/profile.png" alt="profile" width="150px">
+                    </div>
+                    <div class=" card-body">
                         <h5 class="card-title text-warning mb-3">Quick Info</h5>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item bg-dark text-white border-bottom border-warning">
@@ -57,7 +60,7 @@ if ($_COOKIE['user_id']) {
                                 <strong>Total Orders:</strong> 12
                             </li>
                             <li class="list-group-item bg-dark text-white border-bottom border-warning">
-                                <strong>Last Order:</strong> 2 days ago
+                                <strong>Last Order:</strong> No orders yet
                             </li>
                             <li class="list-group-item bg-dark text-white">
                                 <strong>Member Since:</strong> Jan 2024

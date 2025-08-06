@@ -12,7 +12,6 @@ class auth
             }
             $user_pass_hash = auth::$user_data["password"];
             $password_hash = md5($password);
-            var_dump($user_pass_hash, $password_hash);
             if ($password_hash == $user_pass_hash) {
                 return auth::$user_data;
             }
