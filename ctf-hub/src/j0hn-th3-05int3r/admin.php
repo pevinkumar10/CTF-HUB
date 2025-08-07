@@ -49,12 +49,17 @@
             <div class="alert alert-success position-fixed bottom-0 end-0 m-4 shadow" role="alert" style="z-index: 9999;">
                 Login successful,You will be redirected in 3 seconds
             </div>
-    <?php
+        <?php
             header("Refresh: 3, URL=dashboard.php");
 
             exit;
         } else {
-            echo "<script>alert('Invalid credentials'); window.history.back();</script>";
+
+        ?>
+            <div class="alert alert-danger position-fixed bottom-0 end-0 m-4 shadow" role="alert" style="z-index: 9999;">
+                Login failed, invalid username or password.
+            </div>
+    <?php
         }
     }
     ?>

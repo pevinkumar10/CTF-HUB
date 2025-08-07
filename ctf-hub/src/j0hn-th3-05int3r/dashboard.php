@@ -60,7 +60,8 @@
                 <!-- Sidebar -->
                 <nav class="col-md-2 d-none d-md-block sidebar">
                     <h4 class="text-center text-warning">Welcome <?php echo htmlspecialchars(strtoupper($_SESSION['name'])); ?></h4>
-                    <h6 class="mx-4 px-3 text-end">v1.0.0</h6>
+                    <p class="mx-4 px-3 text-end" style="font-size: 0.75rem;">v1.0.0</p>
+                    <p class="text-center" style="font-size: 0.75rem;">flag{hardc0d3d_cr3d3nt1al_l3ak3d}</p>
                     <a href="#" class="active">Dashboard</a>
                     <a href="#">Orders</a>
                     <a href="#">Users</a>

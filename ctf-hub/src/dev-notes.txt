@@ -1,6 +1,0 @@
-Finally you are here john !!
-
-You really missed some malicious charectors on product availability checking feature.
-Please try to add as much as you can or i would suggest you can use anyother way to get the list of products because executing commands on os is not necessary i think :) 
-
-flag{c0mmand_1nj3ct10n_1s_5cary!!}
