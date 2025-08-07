@@ -23,5 +23,8 @@
     load_template('footer')
     ?>
 </body>
+<script>
+    // Product availability check is still in development.
+</script>
 
 </html>

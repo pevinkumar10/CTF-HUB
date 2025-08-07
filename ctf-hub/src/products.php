@@ -14,7 +14,6 @@
 
 <body>
     <?php
-    print_r($_GET);
     if (isset($_GET['action'])) {
         $action = $_GET['action'];
         $name = $_GET['name'];
@@ -28,5 +27,9 @@
     load_template('footer');
     ?>
 </body>
+<script>
+    // product availability checking page is in under devlopment.
+    // john please change that product_list.json is to different location.  
+</script>
 
 </html>

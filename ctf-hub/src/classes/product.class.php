@@ -66,7 +66,7 @@ class Products
 
         foreach ($dangerous_chars as $char) {
             if (str_contains($product_name, $char)) {
-                return "⚠️ Command contains forbidden character: $char";
+                return "Command contains forbidden character: $char";
             } else {
                 $command = "cat " . $products_root_location . $product_name . '.json';
                 $result = shell_exec($command);
