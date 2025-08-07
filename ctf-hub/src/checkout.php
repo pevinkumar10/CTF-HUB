@@ -41,7 +41,7 @@
         } else {
             print("$product couldn't added to cart.");
         }
-    } else if (isset($_POST['action']) and $_POST['action'] == 'place_order') {
+    } else if (isset($_GET['action']) and $_GET['action'] == 'place_order') {
         $uid = $_SESSION['session_data']['id'];
 
         $result = user::place_order($uid);

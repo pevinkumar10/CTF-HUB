@@ -121,7 +121,7 @@
                                     <span>₹ <?php echo $total_price + 10 ?></span>
                                 </div>
                                 <a href="dashboard.php?check_history=<?php echo base64_encode($_SESSION['session_data']['id']) ?>"><button class="btn btn-warning w-100 mt-4">Order History</button></a>
-                                <a href="checkout.php"><button class="btn btn-warning w-100 mt-1">Place Order</button></a>
+                                <a href="checkout.php?action=place_order"><button class="btn btn-warning w-100 mt-1">Place Order</button></a>
                             </div>
                         </div>
                     </div>
