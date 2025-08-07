@@ -111,7 +111,7 @@
                                 <span>₹<?= ($total_price != 0) ? $total_price + 10 : $total_price; ?></span>
                             </div>
 
-                            <form action="dashboard.php" method="get">
+                            <form action="dashboard.php" method="post">
                                 <input type="hidden" name="id" value="<?= base64_encode($_SESSION['session_data']['id']) ?>">
                                 <button class="btn btn-warning w-100 mt-4" name="action" value="check_history">Order History</button>
                             </form>

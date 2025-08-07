@@ -32,9 +32,9 @@
         } else {
             print("Couldn't update profile!");
         }
-    } elseif (isset($_GET['action']) == 'check_history') {
+    } elseif (isset($_POST['action']) == 'check_history') {
 
-        $id = base64_decode($_GET['id']);
+        $id = base64_decode($_POST['id']);
         $history = user::get_checkout_history($id);
 
         load_template("nav");
