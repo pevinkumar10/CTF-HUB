@@ -19,7 +19,7 @@
     if (isset($_SESSION['session_data'])) {
     ?>
     <?php
-        load_template('order');
+        load_template('cart');
     } else {
         load_template('404', $variables = ["message" => "Login first to order your tea"]);
         header('Refresh: 3,URL=/loginphp');
