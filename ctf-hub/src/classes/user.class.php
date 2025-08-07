@@ -4,6 +4,7 @@ class user
 {
     public static $user_data = [];
 
+
     public static function login($result, $password)
     {
         if ($result->num_rows > 0) {
@@ -52,11 +53,25 @@ class user
         return db::select_user($user);
     }
 
-    public static function place_new_order($uid, $product, $quantity, $price)
+    public static function add_to_cart($uid, $product, $quantity, $price)
     {
-        $result = db::place_order($uid, $product, $quantity, $price);
+        $result = db::add_to_cart($uid, $product, $quantity, $price);
         return $result;
     }
 
-    public static function get_order_history($uid) {}
+    public static function place_order($uid)
+    {
+        $result = db::place_order($uid);
+        return $result;
+    }
+
+    public static function get_cart_items($uid)
+    {
+        $cart_items = [];
+        $result = db::get_cart_items($uid);
+        while ($row = $result->fetch_assoc()) {
+            $cart_items[] = $row;
+        }
+        return $cart_items;
+    }
 }

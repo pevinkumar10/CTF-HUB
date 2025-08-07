@@ -24,7 +24,7 @@
         $quantity = $_POST['quantity'];
         $price = $all_product_details['tea'][$product]['price'];
 
-        $result = user::place_new_order($uid, $product, $quantity, $price);
+        $result = user::add_to_cart($uid, $product, $quantity, $price);
 
         if ($result) {
     ?>
@@ -37,12 +37,30 @@
                     </div>
                 </div>
             </div>
-    <?php
+        <?php
         } else {
             print("$product couldn't added to cart.");
         }
     } else if (isset($_POST['action']) and $_POST['action'] == 'place_order') {
-        print('place order');
+        $uid = $_SESSION['session_data']['id'];
+
+        $result = user::place_order($uid);
+
+        if ($result) {
+        ?>
+            <div class="d-flex justify-content-center align-items-center min-vh-100 bg-dark">
+                <div class="card bg-dark text-white border border-warning p-4" style="min-width: 300px; max-width: 500px;">
+                    <h4 class="text-warning mb-3 text-center">☕ Order placed</h4>
+                    <p class="text-white text-center">Thank you ,Explore our curated selection of exotic teas and flavors, brewed with love.</p>
+                    <div class="text-center mt-4">
+                        <a href="/products.php" class="btn btn-warning">Shop more</a>
+                    </div>
+                </div>
+            </div>
+    <?php
+        } else {
+            print("Couldn't place order right now, Kindly try again later.");
+        }
     }
     ?>
 </body>

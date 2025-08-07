@@ -94,18 +94,51 @@ VALUES ('$name', '$email', '$password');";
 
         return $result ? true : false;
     }
-    public static function place_order($session_user_id, $product, $quantity, $price)
+    public static function add_to_cart($session_user_id, $product, $quantity, $price)
     {
         $conn = db::get_connection();
         $price = (int) $quantity * $price;
 
-        $sql = "INSERT INTO `orders` (`user_id`,`product_name`, `quantity`, `price`, `order_date`)
+        $sql = "INSERT INTO `cart` (`user_id`,`product_name`, `quantity`, `price`, `order_date`)
 VALUES ('$session_user_id', '$product', '$quantity', '$price', now());";
 
         $result = $conn->query($sql);
 
         return $result ? true : false;
     }
+    public static function place_order($uid)
+    {
+        $conn = db::get_connection();
+        $sql = "UPDATE `cart` SET is_ordered = 1 WHERE `user_id`='$uid';";
+        $result = $conn->query($sql);
+        if ($result) {
+            return $result;
+        } else {
+            return null;
+        }
+    }
 
-    public static function get_orders($uid) {}
+    public static function get_cart_items($uid)
+    {
+        $conn = db::get_connection();
+        $sql = "SELECT * FROM `cart` WHERE `user_id`='$uid' AND `is_ordered` != 1;";
+        $result = $conn->query($sql);
+        if ($result) {
+            return $result;
+        } else {
+            return null;
+        }
+    }
+    public static function get_order_history($uid)
+    {
+        $uid = base64_decode($uid);
+        $conn = db::get_connection();
+        $sql = "SELECT u.id AS uid,u.name,u.phone,u.address,o.product_name,o.quantity,o.price FROM users u JOIN cart o ON u.id = o.user_id and o.is_ordered = 1";
+        $result = $conn->query($sql);
+        if ($result) {
+            return $result;
+        } else {
+            return null;
+        }
+    }
 }

@@ -2,6 +2,7 @@
     <?php
 
     if (isset($_SESSION['session_data'])) {
+        $cart_items = $variables['cart_items'];
     ?>
 
         <!-- Main Content -->
@@ -81,29 +82,24 @@
                         <!-- Cart Items -->
                         <div class="col-md-6">
                             <h3 class="mb-4 text-warning">Your Cart:</h3>
-                            <div class="card mb-3">
-                                <div class="card-body d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <h5 class="card-title mb-2">Sulaimani Chai</h5>
-                                        <small class="text-muted">Qty: 2</small>
-                                    </div>
-                                    <div>
-                                        ₹40
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+                            $total_price = 0;
+                            foreach ($cart_items as $item) { ?>
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div>
+                                            <h5 class="card-title mb-2"><?php echo $item['product_name']; ?></h5>
+                                            <small class="text-muted">Qty: <?php echo $item['quantity']; ?></small>
+                                        </div>
+                                        <div>
 
-                            <div class="card mb-3">
-                                <div class="card-body d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <h5 class="card-title mb-1">Butter Tea</h5>
-                                        <small class="text-muted">Qty: 1</small>
-                                    </div>
-                                    <div>
-                                        ₹50
+                                            <small class="text-muted"> Total: ₹<?php echo (int)$item['price'] * (int) $item['quantity'];
+                                                                                $total_price += (int)$item['price'] * (int) $item['quantity'];
+                                                                                ?></small>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            <?php } ?>
 
                         </div>
 
@@ -113,7 +109,7 @@
                             <div class="card p-3 shadow-sm">
                                 <div class="d-flex justify-content-between mb-3 ">
                                     <span>Subtotal</span>
-                                    <span>₹90</span>
+                                    <span>₹ <?php echo $total_price ?></span>
                                 </div>
                                 <div class="d-flex justify-content-between mb-3">
                                     <span>Delivery</span>
@@ -122,9 +118,10 @@
                                 <hr>
                                 <div class="d-flex justify-content-between fw-bold">
                                     <span>Total</span>
-                                    <span>₹100</span>
+                                    <span>₹ <?php echo $total_price + 10 ?></span>
                                 </div>
-                                <a href="checkout.php"><button class="btn btn-warning w-100 mt-4">Place Order</button></a>
+                                <a href="dashboard.php?check_history=<?php echo base64_encode($_SESSION['session_data']['id']) ?>"><button class="btn btn-warning w-100 mt-4">Order History</button></a>
+                                <a href="checkout.php"><button class="btn btn-warning w-100 mt-1">Place Order</button></a>
                             </div>
                         </div>
                     </div>

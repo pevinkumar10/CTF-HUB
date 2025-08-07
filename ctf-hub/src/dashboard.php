@@ -16,7 +16,7 @@
     <?php
     if (isset($_POST['name']) and isset($_POST['email']) and isset($_POST['phone']) and isset($_POST['city']) and isset($_POST['address'])) {
 
-        $uid = $_SESSION['id'];
+        $uid = $_SESSION['session_data']['id'];
         $name = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
@@ -32,10 +32,15 @@
         } else {
             print("Couldn't update profile!");
         }
+    } elseif (isset($_POST['check_history']) == true) {
+    } else {
+        $uid = $_SESSION['session_data']['id'];
+        $cart_items = user::get_cart_items($uid);
+        load_template("nav");
+        load_template('dashboard', $variables = ["cart_items" => $cart_items]);
+        load_template('footer');
     }
-    load_template("nav");
-    load_template('dashboard');
-    load_template('footer');
+
     ?>
 </body>
 
