@@ -131,9 +131,9 @@ VALUES ('$session_user_id', '$product', '$quantity', '$price', now());";
     }
     public static function get_order_history($uid)
     {
-        $uid = base64_decode($uid);
+
         $conn = db::get_connection();
-        $sql = "SELECT u.id AS uid,u.name,u.phone,u.address,o.product_name,o.quantity,o.price FROM users u JOIN cart o ON u.id = o.user_id and o.is_ordered = 1";
+        $sql = "SELECT u.id AS uid,u.name,u.phone,u.address,o.product_name,o.quantity,o.price FROM users u JOIN cart o ON u.id = o.user_id AND o.is_ordered = 1 AND u.id = $uid";
         $result = $conn->query($sql);
         if ($result) {
             return $result;

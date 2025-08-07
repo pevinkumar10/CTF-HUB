@@ -74,4 +74,15 @@ class user
         }
         return $cart_items;
     }
+
+    public static function get_checkout_history($uid)
+    {
+        $order_history = [];
+        $result = db::get_order_history($uid);
+
+        while ($row = $result->fetch_assoc()) {
+            $order_history[] = $row;
+        }
+        return $order_history;
+    }
 }

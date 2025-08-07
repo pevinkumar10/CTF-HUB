@@ -32,7 +32,13 @@
         } else {
             print("Couldn't update profile!");
         }
-    } elseif (isset($_POST['check_history']) == true) {
+    } elseif (isset($_GET['action']) == 'check_history') {
+
+        $id = base64_decode($_GET['id']);
+        $history = user::get_checkout_history($id);
+
+        load_template("nav");
+        load_template('dashboard', $variables = ["history" => $history]);
     } else {
         $uid = $_SESSION['session_data']['id'];
         $cart_items = user::get_cart_items($uid);
@@ -42,6 +48,7 @@
     }
 
     ?>
+    <script src="js/custom.js"></script>
 </body>
 
 </html>
