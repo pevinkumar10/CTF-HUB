@@ -13,13 +13,13 @@
 
             <div class="col-md-3">
                 <div class="card bg-dark border border-warning text-white h-100">
-                    <img src="img/kashmiri-kahwa.jpg" class="card-img-top" alt="Masala Chai">
+                    <img src="img/kashmiri-kahwa.jpg" class="card-img-top" alt="Kashmiri Kahwa">
                     <div class="card-body">
                         <h5 class="card-title text-warning">Kashmiri Kahwa</h5>
                         <p class="card-text">A delicate green tea infused with saffron, almonds, and spices — warmth from the valleys of Kashmir.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <a href="/order.php?product=Kashmiri-Kahwa"><button class="btn btn-warning w-100 m-2">Order Now</button></a>
                         <?php if (isset($_SESSION['session_data'])) { ?>
                             <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
                         <?php
@@ -31,13 +31,13 @@
 
             <div class="col-md-3">
                 <div class="card bg-dark border border-warning text-white h-100">
-                    <img src="img/tulsi-chai.jpg" class="card-img-top" alt="Green Chai">
+                    <img src="img/tulsi-chai.jpg" class="card-img-top" alt="Tulsi Chai">
                     <div class="card-body">
                         <h5 class="card-title text-warning">Tulsi Chai</h5>
                         <p class="card-text">A soothing herbal blend with holy basil, known to calm the mind and boost immunity.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <a href="/order.php?product=Tulsi-Chai"><button class="btn btn-warning w-100 m-2">Order Now</button></a>
                         <?php if (isset($_SESSION['session_data'])) { ?>
                             <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
                         <?php
@@ -55,7 +55,7 @@
                         <p class="card-text">A rich, salty Himalayan brew made with tea, butter, and salt — fuel for high-altitude thinkers.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <a href="/order.php?product=Herbal-Fusion"><button class="btn btn-warning w-100 m-2">Order Now</button></a>
                         <?php if (isset($_SESSION['session_data'])) { ?>
                             <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
                         <?php
@@ -66,13 +66,13 @@
             </div>
             <div class="col-md-3">
                 <div class="card bg-dark border border-warning text-white h-100">
-                    <img src="img/sulaimani-chai.jpg" class="card-img-top" alt="Masala Chai">
+                    <img src="img/sulaimani-chai.jpg" class="card-img-top" alt="Sulaimani Chai">
                     <div class="card-body">
                         <h5 class="card-title text-warning">Sulaimani Chai</h5>
                         <p class="card-text">A fragrant black tea infused with lemon and spices, perfect for a refreshing break.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <a href="/order.php?product=Sulaimani-Chai"><button class="btn btn-warning w-100 m-2">Order Now</button></a>
                         <?php if (isset($_SESSION['session_data'])) { ?>
                             <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
                         <?php
@@ -88,13 +88,13 @@
         <div class="row g-4">
             <div class="col-md-3">
                 <div class="card bg-dark border border-warning text-white h-100">
-                    <img src="img/earl-grey-tea.jpg" class="card-img-top" alt="Masala Chai">
+                    <img src="img/earl-grey-tea.jpg" class="card-img-top" alt="Earl Gray Tea">
                     <div class="card-body">
                         <h5 class="card-title text-warning">Earl Grey tea</h5>
                         <p class="card-text"> A bold black tea flavored with bergamot citrus, bringing elegance to your everyday sip.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <a href="/order.php?product=Earl-Gray-Tea"><button class="btn btn-warning w-100 m-2">Order Now</button></a>
                         <?php if (isset($_SESSION['session_data'])) { ?>
                             <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
                         <?php
@@ -111,7 +111,7 @@
                         <p class="card-text">A strong and spiced brew to keep you sharp through long debug sessions.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <a href="/order.php?product=Masala-Chai"><button class="btn btn-warning w-100 m-2">Order Now</button></a>
                         <?php if (isset($_SESSION['session_data'])) { ?>
                             <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
                         <?php
@@ -129,7 +129,7 @@
                         <p class="card-text">Light, fresh, and calming — perfect for focused coding and mindful commits.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <a href="/order.php?product=Green-Chai"><button class="btn btn-warning w-100 m-2">Order Now</button></a>
                         <?php if (isset($_SESSION['session_data'])) { ?>
                             <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
                         <?php
@@ -147,7 +147,7 @@
                         <p class="card-text">Caffeine-free, stress-free — ideal for late-night brainstorming without burnout.</p>
                     </div>
                     <div class="card-footer bg-dark border-top border-warning">
-                        <button class="btn btn-warning w-100 m-2">Order Now</button>
+                        <a href="/order.php?product=Herbal-Fusion"><button class="btn btn-warning w-100 m-2">Order Now</button></a>
                         <?php if (isset($_SESSION['session_data'])) { ?>
                             <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
                         <?php

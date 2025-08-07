@@ -1,37 +1,84 @@
 {
-    "tea" : {
-        "Kashmiri Kahwa":{
-            "quantity":100,
-            "total_orders":1000
+    "tea": {
+        "Kashmiri Kahwa": {
+            "quantity": 100,
+            "availability": "In stock",
+            "total_orders": 1000,
+            "price": 70,
+            "rating": 4.7,
+            "category": "Flavored",
+            "origin": "Kashmir",
+            "description": "A delicate green tea infused with saffron, almonds, and spices — warmth from the valleys of Kashmir."
         },
-        "Tulsi Chai":{
-            "quantity":67,
-            "total_orders":423
+        "Tulsi Chai": {
+            "quantity": 67,
+            "availability": "In stock",
+            "total_orders": 423,
+            "price": 40,
+            "rating": 4.3,
+            "category": "Herbal",
+            "origin": "India",
+            "description":"A soothing herbal blend with holy basil, known to calm the mind and boost immunity."
         },
-        "Butter Tea":{
-            "quantity":47,
-            "total_orders":340
+        "Butter Tea": {
+            "quantity": 47,
+            "availability": "In stock",
+            "total_orders": 340,
+            "price": 55,
+            "rating": 4.1,
+            "category": "Traditional",
+            "origin": "Tibet",
+            "description":"A rich, salty Himalayan brew made with tea, butter, and salt — fuel for high-altitude thinkers."
         },
-        "Sulaimani Chai":{
-            "quantity":433,
-            "total_orders":450
+        "Sulaimani Chai": {
+            "quantity": 433,
+            "availability": "In stock",
+            "total_orders": 450,
+            "price": 35,
+            "rating": 4.0,
+            "category": "Spiced",
+            "origin": "Kerala",
+            "description":"A fragrant black tea infused with lemon and spices, perfect for a refreshing break."
         },
-        "Earl Grey tea":{
-            "quantity":143,
-            "total_orders":530
+        "Earl Grey tea": {
+            "quantity": 143,
+            "availability": "In stock",
+            "total_orders": 530,
+            "price": 65,
+            "rating": 4.5,
+            "category": "Black",
+            "origin": "UK",
+            "description":"A bold black tea flavored with bergamot citrus, bringing elegance to your everyday sip."
         },
-        "Masala Chai":{
-            "quantity":12,
-            "total_orders":870
+        "Masala Chai": {
+            "quantity": 12,
+            "availability": "In stock",
+            "total_orders": 870,
+            "price": 50,
+            "rating": 4.8,
+            "category": "Spiced",
+            "origin": "India",
+            "description":"A strong and spiced brew to keep you sharp through long debug sessions."
         },
-        "Green Chai":{
-            "quantity":50,
-            "total_orders":840
+        "Green Chai": {
+            "quantity": 50,
+            "availability": "In stock",
+            "total_orders": 840,
+            "price": 45,
+            "rating": 4.2,
+            "category": "Green",
+            "origin": "Assam",
+            "description":"Light, fresh, and calming — perfect for focused coding and mindful commits."
         },
-        "Herbal Fusion":{
-           "quantity":0,
-           "total_orders":1530
+        "Herbal Fusion": {
+            "quantity": 0,
+            "availability": "Out of stock",
+            "total_orders": 1530,
+            "price": 60,
+            "rating": 4.6,
+            "category": "Herbal",
+            "origin": "Nilgiris",
+            "description":"Caffeine-free, stress-free — ideal for late-night brainstorming without burnout."
         }
-
     }
 }
