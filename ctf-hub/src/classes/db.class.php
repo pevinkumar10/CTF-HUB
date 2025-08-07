@@ -6,11 +6,10 @@ class db
 
     private static function create_connection()
     {
-
-        $servername = getenv("SERVERNAME");
-        $username = getenv("USERNAME");
-        $password = getenv("PASSWORD");
-        $db = getenv("DB");
+        $servername = '127.0.0.1';
+        $username = 'ctfhub';
+        $password = 'ctfhubpass123';
+        $db = 'ctf_hub';
         $conn = new mysqli($servername, $username, $password, $db);
 
         if ($conn->connect_error) {

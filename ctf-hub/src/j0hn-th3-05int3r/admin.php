@@ -77,6 +77,7 @@
             <button type="submit" class="btn btn-warning">Login</button>
         </form>
     </div>
+    <p class="text-center text-white pt-4">© 2025 Company, Inc</p>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
 </body>

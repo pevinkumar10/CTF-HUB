@@ -1,21 +1,15 @@
 #!/bin/bash
 
-# === Config ===
-DB_NAME="$DB"
-NEW_USER="$USERNAME"
-NEW_PASS="$PASSWORD"
-ROOT_PASS=""
-
 # === Creating DB, USER ===
-mysql -u root -p${ROOT_PASS} <<EOF
-CREATE DATABASE IF NOT EXISTS ${DB_NAME};
-CREATE USER IF NOT EXISTS '${NEW_USER}'@'localhost' IDENTIFIED BY '${NEW_PASS}';
-GRANT ALL PRIVILEGES ON ${DB_NAME}.* TO '${NEW_USER}'@'localhost';
+mysql -u root  <<EOF
+CREATE DATABASE IF NOT EXISTS ctf_hub;
+CREATE USER IF NOT EXISTS 'ctfhub'@'localhost' IDENTIFIED BY 'ctfhubpass123';
+GRANT ALL PRIVILEGES ON ctf_hub.* TO 'ctfhub'@'localhost';
 FLUSH PRIVILEGES;
 EOF
 
 # === Create users table ===
-mysql -u ${NEW_USER} -p${NEW_PASS} ${DB_NAME} <<EOF
+mysql -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
 CREATE TABLE IF NOT EXISTS users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(32) NOT NULL,
@@ -26,5 +20,8 @@ CREATE TABLE IF NOT EXISTS users (
   address VARCHAR(128)
 );
 EOF
+
+# === Configuring permissions ===
+usermod -aG mysql www-data
 
 echo "[✓] Setup complete: Database, user, and table created."

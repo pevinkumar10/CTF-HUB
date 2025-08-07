@@ -9,6 +9,10 @@ ENV USERNAME=ctfhub
 ENV PASSWORD=ctfhubpass123
 ENV DB=ctf_hub
 
+# Admin dashboard env configuration
+ENV ADMIN_USERNAME=john1018
+ENV ADMIN_PASSWORD='@&(gjsb%@)!hdska'
+
 WORKDIR /CTF-HUB
 
 RUN apt-get update && \

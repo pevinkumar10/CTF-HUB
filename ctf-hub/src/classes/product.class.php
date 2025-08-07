@@ -24,6 +24,7 @@ class Products
             '#',
             '!',
             'cd',
+            'env',
             'nc',
             'rm',
             'bash',
