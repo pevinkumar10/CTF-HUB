@@ -124,7 +124,7 @@
                                     <span>Total</span>
                                     <span>₹100</span>
                                 </div>
-                                <button class="btn btn-warning w-100 mt-4">Place Order</button>
+                                <a href="checkout.php"><button class="btn btn-warning w-100 mt-4">Place Order</button></a>
                             </div>
                         </div>
                     </div>

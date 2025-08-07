@@ -94,7 +94,18 @@ VALUES ('$name', '$email', '$password');";
 
         return $result ? true : false;
     }
-    public static function place_order($session_user_id) {}
+    public static function place_order($session_user_id, $product, $quantity, $price)
+    {
+        $conn = db::get_connection();
+        $price = (int) $quantity * $price;
+
+        $sql = "INSERT INTO `orders` (`user_id`,`product_name`, `quantity`, `price`, `order_date`)
+VALUES ('$session_user_id', '$product', '$quantity', '$price', now());";
+
+        $result = $conn->query($sql);
+
+        return $result ? true : false;
+    }
 
     public static function get_orders($uid) {}
 }

@@ -52,7 +52,11 @@ class user
         return db::select_user($user);
     }
 
-    public static function place_new_order($uid) {}
+    public static function place_new_order($uid, $product, $quantity, $price)
+    {
+        $result = db::place_order($uid, $product, $quantity, $price);
+        return $result;
+    }
 
     public static function get_order_history($uid) {}
 }

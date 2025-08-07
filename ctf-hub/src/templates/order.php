@@ -2,9 +2,9 @@
 $selected_product = $_GET['product'];
 $product = str_replace('-', ' ', $selected_product);
 $product_details_file = "products/product_list.json";
-$product_details = json_decode(file_get_contents($product_details_file), true);
+$all_product_details = json_decode(file_get_contents($product_details_file), true);
 
-$details = $product_details['tea'][$product];
+$product_details = $all_product_details['tea'][$product];
 ?>
 <div>
     <section class="container">
@@ -17,23 +17,23 @@ $details = $product_details['tea'][$product];
                             <img class="shadow" src="img/<?php echo strtolower($selected_product); ?>.jpg" alt="<?php echo $selected_product ?>" height="250px">
                         </div>
 
-                        <p class="card-text"><?php echo htmlentities($details['description']) ?></p>
+                        <p class="card-text"><?php echo htmlentities($product_details['description']) ?></p>
 
                         <ul class="list-unstyled mb-3">
-                            <li><strong>Price: </strong> ₹<?php echo htmlentities($details['price']) ?></li>
-                            <li><strong>Category: </strong><?php echo htmlentities($details['category']) ?> </li>
-                            <li><strong>Available: </strong> <?php echo htmlentities($details['availability']) ?></li>
+                            <li><strong>Price: </strong> ₹<?php echo htmlentities($product_details['price']) ?></li>
+                            <li><strong>Category: </strong><?php echo htmlentities($product_details['category']) ?> </li>
+                            <li><strong>Available: </strong> <?php echo htmlentities($product_details['availability']) ?></li>
                         </ul>
 
-                        <form method="POST" action="add_to_cart.php">
+                        <form method="POST" action="checkout.php">
                             <div class="mb-3">
                                 <label for="quantity" class="form-label text-warning">Quantity</label>
                                 <input type="number" name="quantity" id="quantity" class="form-control bg-dark text-white border-warning" value="1" min="1">
                             </div>
 
                             <!-- Hidden fields -->
-                            <input type="hidden" name="product" value="Sulaimani Chai">
-                            <input type="hidden" name="price" value="20">
+                            <input type="hidden" name="action" value="add_to_cart">
+                            <input type="hidden" name="product" value="<?php echo htmlentities($product) ?>">
 
                             <div class="d-grid">
                                 <button type="submit" class="btn btn-warning fw-bold">Add to Cart</button>

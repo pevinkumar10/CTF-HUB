@@ -2,6 +2,7 @@
 
 class Products
 {
+    public static $available_products = [];
     public static function get_available($product_name)
     {
         $products_root_location = "products/";
