@@ -149,7 +149,7 @@
                     <div class="card-footer bg-dark border-top border-warning">
                         <a href="/order.php?product=Herbal-Fusion"><button class="btn btn-warning w-100 m-2">Order Now</button></a>
                         <?php if (isset($_SESSION['session_data'])) { ?>
-                            <a href="/products.php?action=check_availability&name=product_list"><button onclick="showPopup()" class="btn btn-warning w-100 m-2">Check availability</button></a>
+                            <a href="/products.php?action=check_availability&name=product_list"><button class="btn btn-warning w-100 m-2">Check availability</button></a>
                         <?php
                         }
                         ?>
