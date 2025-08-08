@@ -8,6 +8,8 @@ GRANT ALL PRIVILEGES ON ctf_hub.* TO 'ctfhub'@'localhost';
 FLUSH PRIVILEGES;
 EOF
 
+echo "[✓] DB User created."
+
 # === Create users table ===
 mysql -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
 CREATE TABLE IF NOT EXISTS users (
@@ -21,7 +23,26 @@ CREATE TABLE IF NOT EXISTS users (
 );
 EOF
 
+echo "[✓] Users table created."
+
+# === Create orders table ===
+mysql -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
+CREATE TABLE IF NOT EXISTS cart (
+  order_id int NOT NULL AUTO_INCREMENT,
+  user_id int NOT NULL,
+  product_name varchar(32) NOT NULL,
+  quantity int NOT NULL,
+  price int NOT NULL,
+  order_date date NOT NULL,
+  is_ordered int NOT NULL DEFAULT '0',
+  is_delivered int NOT NULL DEFAULT '0',
+  PRIMARY KEY (order_id),
+  KEY user_id (user_id),
+  CONSTRAINT orders_ibfk_1 FOREIGN KEY (user_id) REFERENCES users (id)
+);
+EOF
+
+echo "[✓] Orders table created."
+
 # === Configuring permissions ===
 usermod -aG mysql www-data
-
-echo "[✓] Setup complete: Database, user, and table created."
