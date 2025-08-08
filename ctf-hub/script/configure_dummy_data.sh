@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "[*] Inserting dummy users..."
+echo "[+] Inserting dummy users..."
 
 mysql -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
 
@@ -51,7 +51,11 @@ VALUES ('nancy', 'nancy@ctfhub.com', md5('nancy321'), '9876543205', 'Chennai', '
 
 EOF
 
-echo "[✓] 15 dummy users inserted with flag set at user 10."
+echo "[✓] 15 dummy users inserted with flag user set at user 10."
+
+# ===================================================================== #
+
+echo "[+] Inserting dummy orders..."
 
 mysql -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
 
@@ -79,3 +83,5 @@ VALUES
 (1005, 'Masala Chai', 1, 50, NOW(), 1);
 
 EOF
+
+echo "[✓] 8 dummy orders inserted."
