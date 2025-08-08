@@ -88,7 +88,7 @@
         <div class="row g-4">
             <div class="col-md-3">
                 <div class="card bg-dark border border-warning text-white h-100">
-                    <img src="img/earl-grey-tea.jpg" class="card-img-top" alt="Earl Gray Tea">
+                    <img src="img/earl-gray-tea.jpg" class="card-img-top" alt="Earl Gray Tea">
                     <div class="card-body">
                         <h5 class="card-title text-warning">Earl Grey tea</h5>
                         <p class="card-text"> A bold black tea flavored with bergamot citrus, bringing elegance to your everyday sip.</p>
@@ -105,7 +105,7 @@
             </div>
             <div class="col-md-3">
                 <div class="card bg-dark border border-warning text-white h-100">
-                    <img src="img/masala-chai.png" class="card-img-top" alt="Masala Chai">
+                    <img src="img/masala-chai.jpg" class="card-img-top" alt="Masala Chai">
                     <div class="card-body">
                         <h5 class="card-title text-warning">Masala Chai</h5>
                         <p class="card-text">A strong and spiced brew to keep you sharp through long debug sessions.</p>
@@ -141,7 +141,7 @@
 
             <div class="col-md-3">
                 <div class="card bg-dark border border-warning text-white h-100">
-                    <img src="img/herbal-chai.jpg" class="card-img-top" alt="Herbal Fusion">
+                    <img src="img/herbal-fusion.jpg" class="card-img-top" alt="Herbal Fusion">
                     <div class="card-body">
                         <h5 class="card-title text-warning">Herbal Fusion</h5>
                         <p class="card-text">Caffeine-free, stress-free — ideal for late-night brainstorming without burnout.</p>

@@ -10,10 +10,10 @@
                 <!-- Left Column -->
                 <div class="col-md-8">
                     <div class="card bg-dark border border-warning text-white">
-                        <div class="card-body">
+                        <div class="card-body mb-2">
                             <h4 class="card-title text-warning mb-4">Profile Details:</h4>
                             <form action="/dashboard.php" method="post">
-                                <div class="row">
+                                <div class="row pt-2">
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label text-warning">Full Name</label>
                                         <input type="text" class="form-control bg-dark text-white border-warning" name="name" value="<?= htmlspecialchars($_SESSION["session_data"]["name"]); ?>">
@@ -23,7 +23,7 @@
                                         <input type="email" class="form-control bg-dark text-white border-warning" name="email" value="<?= htmlspecialchars($_SESSION["session_data"]["email"]); ?>">
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row pt-2">
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label text-warning">Phone</label>
                                         <input type="text" class="form-control bg-dark text-white border-warning" name="phone" value="<?= htmlspecialchars($_SESSION["session_data"]["phone"]); ?>">
@@ -34,7 +34,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label text-warning">Delivery Address</label>
+                                    <label class="form-label text-warning pt-2">Delivery Address</label>
                                     <textarea name="address" class="form-control bg-dark text-white border-warning" rows="2"><?= htmlspecialchars($_SESSION["session_data"]["address"]); ?></textarea>
                                 </div>
                                 <div class="d-grid">
@@ -47,7 +47,7 @@
 
                 <!-- Right Column -->
                 <div class="col-md-4">
-                    <div class="card bg-dark border border-warning text-white pb-3">
+                    <div class="card bg-dark border border-warning text-white pb-1">
                         <div class="text-center pt-4">
                             <img src="img/profile.png" alt="profile" width="120px">
                         </div>
@@ -66,6 +66,11 @@
                                 <li class="list-group-item bg-dark text-white">
                                     <strong>Member Since:</strong> Jan 2024
                                 </li>
+
+                                <form action="logout.php">
+                                    <button class="btn btn-warning w-25 mt-3">Logout</button>
+                                </form>
+
                             </ul>
                         </div>
                     </div>
@@ -111,10 +116,21 @@
                                 <span>₹<?= ($total_price != 0) ? $total_price + 10 : $total_price; ?></span>
                             </div>
 
-                            <form action="dashboard.php" method="post">
-                                <input type="hidden" name="id" value="<?= base64_encode($_SESSION['session_data']['id']) ?>">
-                                <button class="btn btn-warning w-100 mt-4" name="action" value="check_history">Order History</button>
-                            </form>
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-2">
+                                    <a href="products.php">
+                                        <button type="button" class="btn btn-warning w-100">Add Products</button>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <form action="dashboard.php" method="get">
+                                        <input type="hidden" name="id" value="<?= base64_encode($_SESSION['session_data']['id']) ?>">
+                                        <button class="btn btn-warning w-100" name="action" value="check_history">Order History</button>
+                                    </form>
+                                </div>
+                            </div>
+
                             <form action="checkout.php" method="post">
                                 <button class="btn btn-warning w-100 mt-1" name="action" value="place_order">Place Order</button>
                             </form>
