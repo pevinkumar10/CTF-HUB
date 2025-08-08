@@ -11,7 +11,6 @@ services:
       - ctfhub_network
     depends_on:
       - database
-
   database:
     build: 
       context: ./ctf-hub/database
@@ -20,12 +19,9 @@ services:
     container_name: database
     networks:
       - ctfhub_network
-    volumes:
-      - ./database:/var/lib/mysql
 
 volumes:
   database:
-
 
 networks:
   ctfhub_network:

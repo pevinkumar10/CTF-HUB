@@ -1,19 +1,23 @@
-FROM mysql:8.0
-    
-ENV TZ=Asia/kolkata
-ENV DEBIAN_FRONTEND=noninteractive 
+FROM ubuntu:20.04
 
-ENV MYSQL_ROOT_PASSWORD=@r00tp@ss123
-ENV MYSQL_DATABASE=ctf_hub
-ENV MYSQL_USER=ctfhub
-ENV MYSQL_PASSWORD=ctfhubpass123
+ENV TZ=Asia/Kolkata
+ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /DATABASE
 
+# Copy all files into container
 COPY . /DATABASE
 
-RUN chown -R mysql:mysql /DATABASE
+# Install MySQL
+RUN apt update && \
+    apt install -y mysql-server && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
+# Make sure entrypoint script is executable
 RUN chmod +x /DATABASE/scripts/entry.sh
 
-ENTRYPOINT [ "/DATABASE/scripts/entry.sh" ]
+RUN sed -i 's/^bind-address.*/bind-address = 0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf
+
+# Use entrypoint script
+ENTRYPOINT ["/DATABASE/scripts/entry.sh"]

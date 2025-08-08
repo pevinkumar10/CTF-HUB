@@ -6,8 +6,6 @@ chmod +x /DATABASE/scripts/configure_mysql.sh
 chmod +x /DATABASE/scripts/configure_dummy_data.sh
 chmod +x /DATABASE/scripts/configure_flags.sh
 
-service mysql start
-
 bash /DATABASE/scripts/configure_mysql.sh
 bash /DATABASE/scripts/configure_dummy_data.sh
 bash /DATABASE/scripts/configure_flags.sh
