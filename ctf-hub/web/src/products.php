@@ -1,3 +1,6 @@
+<?php
+include_once "libs/loader.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,9 +10,6 @@
     <title>CTF-HUB 🍵| Chai</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
-    <?php
-    include_once "libs/loader.php";
-    ?>
 </head>
 
 <body>

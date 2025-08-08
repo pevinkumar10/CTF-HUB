@@ -1,3 +1,6 @@
+<?php
+include_once "../libs/loader.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,9 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/custom.css">
-    <?php
-    include_once "../libs/loader.php";
-    ?>
     <title>Admin Login</title>
     <style>
         .login-box {

@@ -1,3 +1,6 @@
+<?php
+include_once "libs/loader.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +11,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <script src="js/bootstrap.bundle.min.js"></script>
-    <?php
-    include_once "libs/loader.php";
-    ?>
 </head>
 
 <body>

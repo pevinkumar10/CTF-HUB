@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  web:
+    build:
+      context: ./ctf-hub/web
+      dockerfile: Dockerfile
+    container_name: ctfhub_site
+    ports:
+      - "5555:80"
+    networks:
+      - ctfhub_network
+    depends_on:
+      - database
+
+  database:
+    build: 
+      context: ./ctf-hub/database
+      dockerfile: Dockerfile
+    restart: always
+    container_name: database
+    networks:
+      - ctfhub_network
+    volumes:
+      - ./database:/var/lib/mysql
+
+volumes:
+  database:
+
+
+networks:
+  ctfhub_network:

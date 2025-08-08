@@ -1,3 +1,6 @@
+<?php
+include_once "libs/loader.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,9 +10,7 @@
     <title>CTF-HUB 🍵| Login</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
-    <?php
-    include_once "libs/loader.php";
-    ?>
+
     <style>
         body {
             background-color: #191e25;
