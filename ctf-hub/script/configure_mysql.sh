@@ -30,7 +30,7 @@ mysql -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
 CREATE TABLE IF NOT EXISTS cart (
   order_id int NOT NULL AUTO_INCREMENT,
   user_id int NOT NULL,
-  product_name varchar(32) NOT NULL,
+  product_name varchar(64) NOT NULL,
   quantity int NOT NULL,
   price int NOT NULL,
   order_date date NOT NULL,
