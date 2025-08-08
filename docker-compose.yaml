@@ -4,7 +4,7 @@ services:
     build:
       context: ./ctf-hub/web
       dockerfile: Dockerfile
-    container_name: ctfhub_site
+    container_name: ctfhub_web
     ports:
       - "5555:80"
     networks:
@@ -16,7 +16,7 @@ services:
       context: ./ctf-hub/database
       dockerfile: Dockerfile
     restart: always
-    container_name: database
+    container_name: ctfhub_database
     networks:
       - ctfhub_network
 

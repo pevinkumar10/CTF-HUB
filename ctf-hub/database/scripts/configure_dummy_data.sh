@@ -2,7 +2,7 @@
 
 echo "[+] Inserting dummy users..."
 
-mysql -h 127.0.0.1 -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
+mysql -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
 
 INSERT INTO users (id, name, email, password, phone, city, address)
 VALUES (1001, 'john', 'john@ctfhub.com', md5('john123'), '9876543210', 'Chennai', 'No.13, Nageswara Rao Rd, T. Nagar, Chennai, TN 600017');
@@ -57,7 +57,7 @@ echo "[✓] 15 dummy users inserted with flag user set at user 10."
 
 echo "[+] Inserting dummy orders..."
 
-mysql -h 127.0.0.1 -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
+mysql -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
 
 INSERT INTO cart (user_id, product_name, quantity, price, order_date, is_ordered)
 VALUES

@@ -6,7 +6,7 @@ class db
 
     private static function create_connection()
     {
-        $servername = '127.0.0.1';
+        $servername = 'ctfhub_database';
         $username = 'ctfhub';
         $password = 'ctfhubpass123';
         $db = 'ctf_hub';
