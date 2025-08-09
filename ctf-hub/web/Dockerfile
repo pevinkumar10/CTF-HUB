@@ -3,10 +3,6 @@ FROM php:8.3-apache
 ENV TZ=Asia/kolkata
 ENV DEBIAN_FRONTEND=noninteractive 
 
-# Admin dashboard env configuration
-ENV ADMIN_USERNAME=john1018
-ENV ADMIN_PASSWORD='@&(gjsb%@)!hdska'
-
 WORKDIR /CTF-HUB
 
 COPY . /CTF-HUB

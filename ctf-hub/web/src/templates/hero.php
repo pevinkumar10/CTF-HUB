@@ -20,7 +20,7 @@
         <div class="container mt-5">
             <div class="py-2 text-center rounded-3" style="background-color: #f3d944ff;">
                 <h1 class="display-5 fw-bold">WELCOME <?php if (isset($_SESSION["session_data"])) {
-                                                            echo htmlentities(strtoupper($_SESSION["session_data"]["name"]));
+                                                            echo htmlspecialchars(strtoupper($_SESSION["session_data"]["name"]) ?? '');
                                                         }; ?>
                 </h1>
                 <p class="lead">

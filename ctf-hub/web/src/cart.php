@@ -22,7 +22,7 @@ include_once "libs/loader.php";
         load_template('cart');
     } else {
         load_template('404', $variables = ["message" => "Login first to order your tea"]);
-        header('Refresh: 3,URL=/loginphp');
+        echo '<meta http-equiv="refresh" content="3;url=/login.php" />';
     }
 
     ?>

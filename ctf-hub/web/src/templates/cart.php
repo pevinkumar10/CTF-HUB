@@ -17,17 +17,17 @@ $product_details = $all_product_details['tea'][$product];
                     <div class="card bg-dark border border-warning text-white">
 
                         <div class="card-body">
-                            <h4 class="card-title text-warning"><?php htmlentities($product) ?></h4>
+                            <h4 class="card-title text-warning"><?php htmlspecialchars($product ?? '') ?></h4>
                             <div class="d-flex justify-content-center align-items-center pb-3">
                                 <img class="shadow" src="img/<?php echo strtolower($selected_product); ?>.jpg" alt="<?php echo $selected_product ?>" height="250px">
                             </div>
 
-                            <p class="card-text"><?php echo htmlentities($product_details['description']) ?></p>
+                            <p class="card-text"><?php echo htmlspecialchars($product_details['description'] ?? '') ?></p>
 
                             <ul class="list-unstyled mb-3">
-                                <li><strong>Price: </strong> ₹<?php echo htmlentities($product_details['price']) ?></li>
-                                <li><strong>Category: </strong><?php echo htmlentities($product_details['category']) ?> </li>
-                                <li><strong>Available: </strong> <?php echo htmlentities($product_details['availability']) ?></li>
+                                <li><strong>Price: </strong> ₹<?php echo htmlspecialchars($product_details['price'] ?? '') ?></li>
+                                <li><strong>Category: </strong><?php echo htmlspecialchars($product_details['category'] ?? '') ?> </li>
+                                <li><strong>Available: </strong> <?php echo htmlspecialchars($product_details['availability'] ?? '') ?></li>
                             </ul>
 
                             <form method="POST" action="checkout.php">
@@ -38,7 +38,7 @@ $product_details = $all_product_details['tea'][$product];
 
                                 <!-- Hidden fields -->
                                 <input type="hidden" name="action" value="add_to_cart">
-                                <input type="hidden" name="product" value="<?php echo htmlentities($product) ?>">
+                                <input type="hidden" name="product" value="<?php echo htmlspecialchars($product ?? '') ?>">
 
                                 <div class="d-grid">
                                     <button type="submit" class="btn btn-warning fw-bold">Add to Cart</button>

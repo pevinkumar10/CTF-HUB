@@ -16,26 +16,26 @@
                                 <div class="row pt-2">
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label text-warning">Full Name</label>
-                                        <input type="text" class="form-control bg-dark text-white border-warning" name="name" value="<?= htmlspecialchars($_SESSION["session_data"]["name"]); ?>">
+                                        <input type="text" class="form-control bg-dark text-white border-warning" name="name" value="<?= htmlspecialchars($_SESSION["session_data"]["name"] ?? ''); ?>">
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label text-warning">Email</label>
-                                        <input type="email" class="form-control bg-dark text-white border-warning" name="email" value="<?= htmlspecialchars($_SESSION["session_data"]["email"]); ?>">
+                                        <input type="email" class="form-control bg-dark text-white border-warning" name="email" value="<?= htmlspecialchars($_SESSION["session_data"]["email"] ?? ''); ?>">
                                     </div>
                                 </div>
                                 <div class="row pt-2">
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label text-warning">Phone</label>
-                                        <input type="text" class="form-control bg-dark text-white border-warning" name="phone" value="<?= htmlspecialchars($_SESSION["session_data"]["phone"]); ?>">
+                                        <input type="text" class="form-control bg-dark text-white border-warning" name="phone" value="<?= htmlspecialchars($_SESSION["session_data"]["phone"] ?? ''); ?>">
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label text-warning">City</label>
-                                        <input type="text" class="form-control bg-dark text-white border-warning" name="city" value="<?= htmlspecialchars($_SESSION["session_data"]["city"]); ?>">
+                                        <input type="text" class="form-control bg-dark text-white border-warning" name="city" value="<?= htmlspecialchars($_SESSION["session_data"]["city"] ?? ''); ?>">
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label text-warning pt-2">Delivery Address</label>
-                                    <textarea name="address" class="form-control bg-dark text-white border-warning" rows="2"><?= htmlspecialchars($_SESSION["session_data"]["address"]); ?></textarea>
+                                    <textarea name="address" class="form-control bg-dark text-white border-warning" rows="2"><?= htmlspecialchars($_SESSION["session_data"]["address"] ?? ''); ?></textarea>
                                 </div>
                                 <div class="d-grid">
                                     <button type="submit" class="btn btn-warning fw-bold">Save Changes</button>
@@ -161,12 +161,12 @@
                                             <?php foreach ($history as $index => $item): ?>
                                                 <tr>
                                                     <td><?= $index + 1; ?></td>
-                                                    <td><?= htmlspecialchars($item['product_name']); ?></td>
-                                                    <td><?= htmlspecialchars($item['quantity']); ?></td>
-                                                    <td>₹<?= htmlspecialchars($item['price']); ?></td>
-                                                    <td><?= htmlspecialchars($item['name']); ?></td>
-                                                    <td><?= htmlspecialchars($item['phone']); ?></td>
-                                                    <td><?= htmlspecialchars($item['address']); ?></td>
+                                                    <td><?= htmlspecialchars($item['product_name'] ?? ''); ?></td>
+                                                    <td><?= htmlspecialchars($item['quantity'] ?? ''); ?></td>
+                                                    <td>₹<?= htmlspecialchars($item['price'] ?? ''); ?></td>
+                                                    <td><?= htmlspecialchars($item['name'] ?? ''); ?></td>
+                                                    <td><?= htmlspecialchars($item['phone'] ?? ''); ?></td>
+                                                    <td><?= htmlspecialchars($item['address'] ?? ''); ?></td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -180,7 +180,24 @@
         </div>
     <?php
     } else {
-        header('location: /');
+    ?>
+        <div class="container center-box">
+            <div class="error-code"><?php if (isset($variables['status_code'])) {
+                                        print($variables['status_code']);
+                                    } else {
+                                        print("404");
+                                    };  ?></div>
+            <div class="message text-white">Oops! Something’s went wrong...</div>
+            <div class="subtext"><?php if (isset($variables['message'])) {
+                                        print($variables['message']);
+                                    } else {
+                                        print("Something went wrong");
+                                    };  ?></div>
+            <a href="/" class="btn btn-warning">Back to Home</a>
+            <div class="chai-icon">☕</div>
+        </div>
+    <?php
+        echo '<meta http-equiv="refresh" content="1;url=/" />';
     }
     ?>
 </div>

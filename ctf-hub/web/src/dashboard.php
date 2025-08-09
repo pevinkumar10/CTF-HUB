@@ -15,6 +15,7 @@ include_once "libs/loader.php";
 
 <body>
     <?php
+    // update profile
     if (isset($_POST['name']) and isset($_POST['email']) and isset($_POST['phone']) and isset($_POST['city']) and isset($_POST['address'])) {
 
         $uid = $_SESSION['session_data']['id'];
@@ -28,19 +29,29 @@ include_once "libs/loader.php";
         if ($result) {
             $user_data = user::$user_data;
             $_SESSION['session_data'] = $user_data;
-            print("Profile updated");
-            header('Refresh: 1');
+    ?>
+            <div class="alert alert-success position-fixed bottom-0 end-0 m-4 shadow" role="alert" style="z-index: 9999;">
+                Profile Updated 🍵
+            </div>
+        <?php
+            echo '<meta http-equiv="refresh" content="2;url=/login.php" />';
         } else {
-            print("Couldn't update profile!");
+        ?>
+            <div class="alert alert-danger position-fixed bottom-0 end-0 m-4 shadow" role="alert" style="z-index: 9999;">
+                Profile Updated unsuccessful 😥
+            </div>
+    <?php
+
         }
     } elseif (isset($_POST['action']) == 'check_history') {
-
+        // chack history
         $id = base64_decode($_POST['id']);
         $history = user::get_checkout_history($id);
 
         load_template("nav");
         load_template('dashboard', $variables = ["history" => $history]);
     } else {
+        // load dashbooard
         $uid = $_SESSION['session_data']['id'];
         $cart_items = user::get_cart_items($uid);
         load_template("nav");

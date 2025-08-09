@@ -35,7 +35,7 @@ include_once "libs/loader.php";
                 </div>
 
             <?php
-                header('Refresh: 2,URL=/login.php');
+                echo '<meta http-equiv="refresh" content="2;url=/login.php" />';
             } else {
             ?>
                 <div class="alert alert-danger position-fixed bottom-0 end-0 m-4 shadow" role="alert" style="z-index: 9999;">
@@ -51,7 +51,7 @@ include_once "libs/loader.php";
                 Signup failed, something went wrong.
             </div>
     <?php
-            header('Refresh: 2');
+            echo '<meta http-equiv="refresh" content="2;url=/signup.php" />';
         }
     } else {
         load_template('signup');

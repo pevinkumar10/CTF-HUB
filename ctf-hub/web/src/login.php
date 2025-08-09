@@ -34,7 +34,7 @@ include_once "libs/loader.php";
                 Login successful,You will be redirected in 3 seconds
             </div>
         <?php
-            header('Refresh: 3, URL=/');
+            echo '<meta http-equiv="refresh" content="3;url=/" />';
         } else {
             load_template('login');
         ?>
@@ -42,7 +42,7 @@ include_once "libs/loader.php";
                 Login unsuccessful
             </div>
     <?php
-            header('Refresh: 2');
+            echo '<meta http-equiv="refresh" content="2;url=/login.php" />';
         }
     } else {
         load_template('login');

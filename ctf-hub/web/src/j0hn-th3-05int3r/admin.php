@@ -35,8 +35,8 @@ include_once "../libs/loader.php";
 
 <body>
     <?php
-    $admin_user = getenv('ADMIN_USERNAME');
-    $admin_pass = getenv('ADMIN_PASSWORD');
+    $admin_user = 'john1018';
+    $admin_pass = '@&(gjsb%@)!hdska';
 
     if (isset($_POST['username']) and isset($_POST['password'])) {
         $username = $_POST['username'] ?? '';
@@ -50,9 +50,7 @@ include_once "../libs/loader.php";
                 Login successful,You will be redirected in 3 seconds
             </div>
         <?php
-            header("Refresh: 3, URL=dashboard.php");
-
-            exit;
+            echo '<meta http-equiv="refresh" content="3;url=/dashboard.php" />';
         } else {
 
         ?>
