@@ -94,7 +94,7 @@ class db
     }
 
     /** 
-     * Update an user date on the database.
+     * Update an user on the database.
      * 
      * This update_user function is used to insert a row to the users table.
      * 
