@@ -50,7 +50,7 @@ include_once "../libs/loader.php";
                 Login successful,You will be redirected in 3 seconds
             </div>
         <?php
-            echo '<meta http-equiv="refresh" content="3;url=/j0hn-th3-05int3r/dashboard.php" />';
+            echo '<meta http-equiv="refresh" content="3;url=dashboard.php" />';
         } else {
 
         ?>
@@ -63,7 +63,7 @@ include_once "../libs/loader.php";
     ?>
     <div class="login-box">
         <h3 class="text-center text-warning mb-4">Admin Panel Login</h3>
-        <form action="admin.php" method="POST">
+        <form action="login.php" method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label text-white">Username</label>
                 <input type="text" class="form-control bg-dark text-white" id="username" name="username" value="" required>

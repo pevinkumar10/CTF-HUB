@@ -9,6 +9,7 @@ include_once "../libs/loader.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/custom.css" rel="stylesheet" />
     <style>
         body {
             background-color: #121212;
@@ -53,7 +54,7 @@ include_once "../libs/loader.php";
 <body>
 
     <?php
-    if ($_SESSION['admin']) { ?>
+    if (isset($_SESSION['admin'])) { ?>
         <div class="container-fluid">
             <div class="row">
 
@@ -140,7 +141,16 @@ include_once "../libs/loader.php";
             </div>
         </div>
     <?php } else {
-        echo '<meta http-equiv="refresh" content="1;url=admin.php" />';
+    ?>
+        <div class="container center-box">
+            <div class="error-code">403</div>
+            <div class="message text-white">Oops! Something’s went wrong...</div>
+            <div class="subtext">Forbidden</div>
+            <a href="/" class="btn btn-warning">Back to Home</a>
+            <div class="chai-icon">☕</div>
+        </div>
+    <?php
+        echo '<meta http-equiv="refresh" content="3;url=login.php" />';
     } ?>
     <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
