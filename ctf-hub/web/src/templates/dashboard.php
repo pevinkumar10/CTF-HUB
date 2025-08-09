@@ -139,8 +139,8 @@
 
                     <!-- Order History -->
                     <?php if (count($history) >= 1): ?>
-                        <div class="col-md-12 pt-5">
-                            <div class="card bg-dark border border-warning text-white shadow-lg p-4">
+                        <div class="col-md-10 pt-5 my-5">
+                            <div class="card bg-dark border border-warning text-white shadow-lg p-4 mx-4">
                                 <div class="mb-4 d-flex justify-content-between align-items-center">
                                     <h4 class="text-warning m-0">🧾 Order History</h4>
                                 </div>
