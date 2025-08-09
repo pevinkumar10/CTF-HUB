@@ -31,6 +31,7 @@ Lets start with the first vulnerability OS Command injection.
 ## OS Command Injection
 
 > Description:
+
 The application provides a functionality at products.php where users can check the product availability by specifying that product name. The server executes a system command (cat) using this input. Although there is a basic blacklist filter intended to block dangerous characters (e.g., ;, (), |), the filtering can be bypassed by using alternate encoding and &&. This allows arbitrary system commands to be executed on the server.
 
 > Steps to Reproduce:
@@ -85,6 +86,7 @@ Now move forward to LFI the next vulnerability.
 ## Local File Inclusion (LFI)
 
 > Description:
+
 The Local File Inclusion (LFI) is a vulnerability that occurs when a web application dynamically loads files based on user-supplied input without proper validation or sanitization. By manipulating the file path, an attacker can trick the application into loading sensitive files from the server’s filesystem. Here the `page=` on about.php (got from source code review) is vulnerable for LFI (Local file Inclusion) which allows an attacker to enumerate a certain directory and disclosed maintainace notes which has access key (In our case it is a flag).
 
 
@@ -94,7 +96,7 @@ The Local File Inclusion (LFI) is a vulnerability that occurs when a web applica
 
 - Step 2: Change the `page` parameter into anyother and see the response.
 
-- Step 3: Run the following command to enumerate the directory **(In our case i checked wether the file is there in template dir or not so it can only access files inside /template directory.)**
+- Step 3: Run the following command to enumerate the directory **(In our case i checked whether the file is there in template dir or not so it can only access files inside /template directory.)**
 
 ```bash
 ffuf -u "http://localhost:5555/about.php?page=FUZZ" -w /usr/share/wordlists/seclists/Discovery/Web-Content/raft-large-directories.txt -fw 78 
@@ -143,6 +145,7 @@ Now move on to an intresting and very easy but high - critical Seviority vulnera
 ## Hardcoded Credentials Exposed On Public Directory
 
 > Description:
+
 This vulnerability occurs when sensitive login credentials (such as usernames, passwords, API keys) are stored directly in the application’s source code, which is then accessible to attackers for example, through a publicly accessible repository or leaked code package. Here the vulnerability is occured due to the exposure of admin credentials on public repo ctfhub10 (repo name we got from LFI)
 
 > Steps to Reproduce:
@@ -193,6 +196,7 @@ Let's jump into our final vulnerability **IDOR**
 ## IDOR in Order History checking functionality
 
 > Description:
+
 An IDOR(Insecure Direct Object Reference) vulnerability occurs when an application exposes a reference to an internal object (like a user ID, order number, file path) without properly verifying whether the requester is authorized to access it. In this case, the web application’s order history feature uses a POST request with an id parameter to retrieve details of a specific order. The server does not validate that the order belongs to the logged-in user, allowing an attacker to manipulate the id and access another user’s order data. 
 
 > Steps to Reproduce:
@@ -311,8 +315,9 @@ f1ag{ID0R_1s_Scary_If_P11_Exp0s3d}
 
 Through a chain of vulnerabilities starting from OS Command Injection and ending with IDOR, all flags were captured. The challenge demonstrates the importance of secure coding practices and proper input validation.
 
-> Note: As i said before if we tested for sqli it must be there due to the intention to created a vulnerable environment so if you found any other sqli im really happy and let me know what is it how did you approch that. 
+> Note: As i said before if we tested for sqli it must be there due to the intention to created a vulnerable environment so if you found any other than sqli im really happy to know about and let me know what is it how did you approch that. 
 
 <p align="center">
   ❤️ Happy to learn and grow .🌱
 </p>
+
