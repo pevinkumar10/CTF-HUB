@@ -35,6 +35,7 @@ include_once "../libs/loader.php";
 
 <body>
     <?php
+    // TODO: Don't hardcoded credentials,instead use environment variable to retrive credentials.
     $admin_user = 'john1018';
     $admin_pass = '@&(gjsb%@)!hdska';
 
