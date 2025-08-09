@@ -280,6 +280,7 @@ id=MTAwMQ%3D%3D&action=check_history
     </div>
 </div>
 ```
+Step 3: Send this request to intruder and add number payload at `id` parameter and in payload processing add base64 encoding then click start atttack and see the response. (As intented ,This shows how a blind spot can cause big trouble. here it expose other users PII)
 
 > Screenshot:
 
