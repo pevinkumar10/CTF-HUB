@@ -1,6 +1,6 @@
 # ☕ CTF-HUB Vulnerable Tea Shop Web Application
 
-A **multi-page vulnerable tea shop web application** built for security testing and learning purposes.  
+  A **multi-page vulnerable tea shop web application** built for security testing and learning purposes.  
 This application contains **intentionally introduced vulnerabilities** for educational and research purposes.  
 It is fully Dockerized using `docker-compose` with separate containers for **web** and **database**, and is automatically configured using modular Bash scripts.
 
@@ -8,13 +8,15 @@ It is fully Dockerized using `docker-compose` with separate containers for **web
 
 ## 📸 Sample Screenshots
 <p align="center">
-  <img src="imgs/home.png" alt="Tea Shop Home" width="45%"/>
-  <img src="imgs/dashboard.png" alt="Admin Dashboard" width="45%"/>
-</p>
-
-<p align="center">
-  <img src="images/cart.png" alt="Cart Page" width="45%"/>
-  <img src="images/dashboard_order_history.png" alt="Order History" width="45%"/>
+  <img src="imgs/home.png" alt="Tea Shop Home Login" width="45%"/>
+  <img src="imgs/login.png" alt="Tea Shop Home Login" width="45%"/>
+  <img src="imgs/signup.png" alt="Tea Shop Signup" width="45%"/>
+  <img src="imgs/dashboard.png" alt="User dashbaord" width="45%"/>
+  <img src="imgs/admin_login.png" alt="Admin login" width="45%"/>
+  <img src="imgs/admin_dashboard.png" alt="Admin dashboard" width="45%"/>
+  <img src="imgs/products.png" alt="Product Page" width="45%"/>
+  <img src="imgs/about.png" alt="Tea Shop About" width="45%"/>
+  <img src="imgs/custom_error_page.png" alt="Tea Shop custom error page" width="45%"/>
 </p>
 
 ---
@@ -146,4 +148,5 @@ This project is licensed under the [MIT License](./LICENSE).
 
 <p align="center">
   Made with ❤️ for Security Learning
+
 </p>
