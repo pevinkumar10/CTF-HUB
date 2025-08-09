@@ -50,7 +50,7 @@ include_once "../libs/loader.php";
                 Login successful,You will be redirected in 3 seconds
             </div>
         <?php
-            echo '<meta http-equiv="refresh" content="3;url=/dashboard.php" />';
+            echo '<meta http-equiv="refresh" content="3;url=/j0hn-th3-05int3r/dashboard.php" />';
         } else {
 
         ?>

@@ -125,7 +125,7 @@
 
                                 <div class="col-md-6 mb-2">
                                     <form action="dashboard.php" method="post">
-                                        <input type="hidden" name="id" value="<?= base64_encode($_SESSION['session_data']['id']) ?>">
+                                        <input type="hidden" name="id" value="<?= isset($_SESSION['session_data']['id']) ? base64_encode($_SESSION['session_data']['id']) : '' ?>">
                                         <button class="btn btn-warning w-100" name="action" value="check_history">Order History</button>
                                     </form>
                                 </div>

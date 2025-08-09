@@ -52,11 +52,16 @@ include_once "libs/loader.php";
         load_template('dashboard', $variables = ["history" => $history]);
     } else {
         // load dashbooard
-        $uid = $_SESSION['session_data']['id'];
-        $cart_items = user::get_cart_items($uid);
-        load_template("nav");
-        load_template('dashboard', $variables = ["cart_items" => $cart_items]);
-        load_template('footer');
+        if (isset($_SESSION['session_data'])) {
+            $uid = $_SESSION['session_data']['id'];
+            $cart_items = user::get_cart_items($uid);
+            load_template("nav");
+            load_template('dashboard', $variables = ["cart_items" => $cart_items]);
+            load_template('footer');
+        } else {
+            load_template('404', $variables = ["status_code" => "403", "message" => "Please login to access your dashboard."]);
+            echo '<meta http-equiv="refresh" content="3;url=/login.php" />';
+        }
     }
 
     ?>
