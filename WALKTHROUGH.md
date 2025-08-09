@@ -285,7 +285,7 @@ Step 3: Send this request to intruder and add number payload at `id` parameter a
 > Screenshot:
 
 <div align="center">
-    <h4>Command Injection Hint:</h4>
+    <h4>IDOR PoC</h4>
     <img src="imgs/Idor.jpg" width="600px" height="250px" alt="IDOR POC" />
 </div>
 
