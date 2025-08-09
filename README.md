@@ -1,4 +1,4 @@
-# ☕ CTF-HUB Vulnerable Tea Shop Web Application
+# CTF-HUB Vulnerable coffee Shop Web Application with known vulnerabilities to test and learn security misconfiguration.
 
   A **multi-page vulnerable tea shop web application** built for security testing and learning purposes.  
 This application contains **intentionally introduced vulnerabilities** for educational and research purposes.  
