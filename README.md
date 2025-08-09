@@ -77,12 +77,12 @@ cd CTF-HUB
 
 # Start the containers
 ```bash
-docker-compose up
+docker-compose up -d
 ````
 
 # Stop the containers
 ```bash
-docker-compose up
+docker-compose down
 ````
 
 The **web app** will be available at:
