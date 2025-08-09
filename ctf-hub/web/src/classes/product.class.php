@@ -3,8 +3,19 @@
 class Products
 {
     public static $available_products = [];
+
+    /** 
+     * Get available products.
+     * 
+     * This get_available function is used to get cart items.
+     * 
+     * @param string $product_name product name.
+     * 
+     * @return string If the command is executed.
+     * */
     public static function get_available($product_name)
     {
+        // TODO: Use regex to filter the input ,it provide more controls over the input data.
         $products_root_location = "products/";
         $dangerous_chars =  [
             ';',
