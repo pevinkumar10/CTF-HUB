@@ -1,6 +1,13 @@
 #!/bin/bash
 
-# === Creating DB, USER ===
+#########################################################################
+#                         Database Configuration                        #
+#########################################################################
+
+# --------------------------------------------------------------------- #
+#                      --== Creating Database ==-                       #
+# --------------------------------------------------------------------- #
+
 mysql -u root <<EOF
 CREATE DATABASE IF NOT EXISTS ctf_hub;
 CREATE USER IF NOT EXISTS 'ctfhub'@'%' IDENTIFIED BY 'ctfhubpass123';
@@ -10,9 +17,10 @@ GRANT ALL PRIVILEGES ON ctf_hub.* TO 'ctfhub'@'localhost';
 FLUSH PRIVILEGES;
 EOF
 
-echo "[✓] DB User created."
+# --------------------------------------------------------------------- #
+#                      --== Create Users Table ==--                     #
+# --------------------------------------------------------------------- #
 
-# === Create users table ===
 mysql -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
 CREATE TABLE IF NOT EXISTS users (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -25,9 +33,10 @@ CREATE TABLE IF NOT EXISTS users (
 );
 EOF
 
-echo "[✓] Users table created."
+# --------------------------------------------------------------------- #
+#                      --== Create Orders Table ==--                    #
+# --------------------------------------------------------------------- #
 
-# === Create orders table ===
 mysql -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
 CREATE TABLE IF NOT EXISTS cart (
   order_id int NOT NULL AUTO_INCREMENT,
@@ -43,6 +52,3 @@ CREATE TABLE IF NOT EXISTS cart (
   CONSTRAINT orders_ibfk_1 FOREIGN KEY (user_id) REFERENCES users (id)
 );
 EOF
-
-echo "[✓] Orders table created."
-

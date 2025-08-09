@@ -1,6 +1,12 @@
 #!/bin/bash
 
-echo "[+] Inserting dummy users..."
+#########################################################################
+#                 Dummy Users Data & Orders Configuration               #
+#########################################################################
+
+# --------------------------------------------------------------------- #
+#                    --== Inserting Dummy Users ==--                    #
+# --------------------------------------------------------------------- #
 
 mysql -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
 
@@ -48,14 +54,11 @@ VALUES ('david', 'david@ctfhub.com', md5('davidpass'), '9876543204', 'Chennai', 
 
 INSERT INTO users (name, email, password, phone, city, address)
 VALUES ('nancy', 'nancy@ctfhub.com', md5('nancy321'), '9876543205', 'Chennai', 'Ashok Nagar, Chennai');
-
 EOF
 
-echo "[✓] 15 dummy users inserted with flag user set at user 10."
-
-# ===================================================================== #
-
-echo "[+] Inserting dummy orders..."
+# --------------------------------------------------------------------- #
+#                    --== Inserting dummy orders ==--                   #
+# --------------------------------------------------------------------- #
 
 mysql -u ctfhub -p'ctfhubpass123' ctf_hub <<EOF
 
@@ -81,7 +84,4 @@ INSERT INTO cart (user_id, product_name, quantity, price, order_date, is_ordered
 VALUES
 (1005, 'Kashmiri Kahwa', 1, 70, NOW(), 1),
 (1005, 'Masala Chai', 1, 50, NOW(), 1);
-
 EOF
-
-echo "[✓] 8 dummy orders inserted."
