@@ -8,13 +8,13 @@ It is fully Dockerized using `docker-compose` with separate containers for **web
 
 ## 📸 Sample Screenshots
 <p align="center">
-  <img src="imgs/homepage.png" alt="Tea Shop Home" width="45%"/>
-  <img src="imgs/admin_dashboard.png" alt="Admin Dashboard" width="45%"/>
+  <img src="imgs/home.png" alt="Tea Shop Home" width="45%"/>
+  <img src="imgs/dashboard.png" alt="Admin Dashboard" width="45%"/>
 </p>
 
 <p align="center">
   <img src="images/cart.png" alt="Cart Page" width="45%"/>
-  <img src="images/order_history.png" alt="Order History" width="45%"/>
+  <img src="images/dashboard_order_history.png" alt="Order History" width="45%"/>
 </p>
 
 ---
