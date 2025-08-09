@@ -26,7 +26,7 @@ It is fully Dockerized using `docker-compose` with separate containers for **web
 This project simulates a real-world **e-commerce tea shop** with core features like login, signup, cart management, and order history.  
 It is **purposely vulnerable** to common web security issues, making it suitable for **penetration testing**, **security training**, and **CTF challenges**.
 
-There are **4 main vulnerabilities** in the app and each tied to a **flag** for gamified learning.
+There are **4 main vulnerabilities** in the app and each tied to a **flag** for gamified learning. Additionally this repo has pentest [reports](./pentest/) and [Walkthrogh](./WALKTHROUGH.md) for this challenge room.
 
 ---
 
@@ -115,7 +115,11 @@ http://localhost:5555
 │           ├── libs                                    # Library files for the web app.
 │           ├── products                                # Available products.
 │           └── templates                               # Templates to reuse.
+├── README.md                        # Readme file for the CTF-HUB coffee shop.
+├── WALKTHROGH.md                    # Walkthrogh for the challanges.
+├── LICENSE                          # LICENSE (MIT).
 ├── docker-compose.yaml              # Composure file to deploy the containers (web,database).
+├── pentest                          # Pentest reports for each vulnerability
 └── imgs                             # Sample screenshots for this project.
 ```
 
