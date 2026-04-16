@@ -1,91 +1,111 @@
-## CTF-HUB Vulnerable coffee Shop Web Application with known vulnerabilities to test and learn security misconfiguration.
-
-  A **multi-page vulnerable tea shop web application** built for security testing and learning purposes.  
-This application contains **intentionally introduced vulnerabilities** for educational and research purposes.  
-It is fully Dockerized using `docker-compose` with separate containers for **web** and **database**, and is automatically configured using modular Bash scripts.
-
----
-
-## 📸 Sample Screenshots
 <p align="center">
-  <img src="imgs/home.png" alt="Tea Shop Home Login" width="45%"/>
-  <img src="imgs/login.png" alt="Tea Shop Home Login" width="45%"/>
-  <img src="imgs/signup.png" alt="Tea Shop Signup" width="45%"/>
-  <img src="imgs/dashboard.png" alt="User dashbaord" width="45%"/>
-  <img src="imgs/admin_login.png" alt="Admin login" width="45%"/>
-  <img src="imgs/admin_dashboard.png" alt="Admin dashboard" width="45%"/>
-  <img src="imgs/products.png" alt="Product Page" width="45%"/>
-  <img src="imgs/about.png" alt="Tea Shop About" width="45%"/>
-  <img src="imgs/custom_error_page.png" alt="Tea Shop custom error page" width="45%"/>
+  <img src="imgs/banner.png" alt="CTF-HUB Banner" width="80%"/>
+</p>
+
+<h1 align="center">CTF-HUB | Vulnerable Coffee Shop Web App ☕</h1>
+
+<p align="center">
+  A deliberately vulnerable multi-page e-commerce web application for learning web security, penetration testing, and CTF practice.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Type-CTF%20Lab-red?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Docker-Containerized-blue?style=for-the-badge&logo=docker" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Focus-Web%20Security-orange?style=for-the-badge" />
 </p>
 
 ---
 
-## 📝 Description
+## 📌 Overview
 
-This project simulates a real-world **e-commerce tea shop** with core features like login, signup, cart management, and order history.  
-It is **purposely vulnerable** to common web security issues, making it suitable for **penetration testing**, **security training**, and **CTF challenges**.
+**CTF-HUB** is a vulnerable coffee/tea shop web application designed for:
 
-There are **4 main vulnerabilities** in the app and each tied to a **flag** for gamified learning. Additionally this repo has pentest [reports](./pentest/) and [Walkthrogh](./WALKTHROUGH.md) for this challenge room.
+- 🔐 Web security learning
+- 🧪 Penetration testing practice
+- 🏁 CTF-style challenges
+- 🛠 Understanding real-world misconfigurations
+
+The project is fully containerized using **Docker Compose**, with isolated services for:
+- Web application
+- Database layer
+
+---
+
+## 📸 Screenshots
+
+<p align="center">
+  <img src="imgs/home.png" width="45%"/>
+  <img src="imgs/login.png" width="45%"/>
+  <img src="imgs/signup.png" width="45%"/>
+  <img src="imgs/dashboard.png" width="45%"/>
+  <img src="imgs/admin_login.png" width="45%"/>
+  <img src="imgs/admin_dashboard.png" width="45%"/>
+  <img src="imgs/products.png" width="45%"/>
+  <img src="imgs/about.png" width="45%"/>
+</p>
 
 ---
 
 ## ✨ Features
 
-- **User Authentication**
-  - Welcome message with username
-  - Login / Logout / Signup
-- **E-Commerce**
-  - Add to cart
-  - View cart items
-  - Place orders
-  - View order history
-- **User Dashboard**
-  - Profile update
-- **Admin Panel**
-  - Admin login
-  - Admin dashboard
-- **CTF Flags**
-  - 4 flags, one per known vulnerability
+### 👤 Authentication
+- Login / Signup / Logout
+- Session-based user handling
+- Profile update support
+
+### 🛒 E-Commerce System
+- Product listing
+- Add to cart
+- Order placement
+- Order history tracking
+
+### 🧑‍💼 Admin Panel
+- Admin login portal
+- Admin dashboard
+
+### 🏁 CTF System
+- 4 hidden flags embedded in vulnerabilities
+- Gamified exploitation flow
 
 ---
 
-## 🚨 Vulnerabilities Included
+## 🚨 Vulnerabilities (Intentionally Introduced)
 
-> **Warning** – These vulnerabilities are **intentional** and must never be deployed in a production environment.
+> ⚠️ This application is insecure by design. Do NOT deploy publicly.
 
-1. **IDOR** – Insecure Direct Object Reference
-2. **Admin Credentials Disclosure**
-3. **Command Injection**
-4. **Local File Inclusion (LFI)**
-5. **SQL Injection** (Possible due to lack of input validation & sanitization )
+- 🧩 IDOR (Insecure Direct Object Reference)
+- 🔐 Admin credentials disclosure
+- 💻 Command Injection
+- 📁 Local File Inclusion (LFI)
+- 🧪 SQL Injection (via missing validation & sanitization)
 
 ---
 
 ## ⚙️ Setup & Installation
 
-### **Prerequisites**
-- [Docker](https://www.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
+### 📦 Prerequisites
+- Docker
+- Docker Compose
 
-### **Steps**
+### 🚀 Run Project
+
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/pevinkumar10/CTF-HUB.git
 cd CTF-HUB
-```
 
-# Start the containers
-```bash
+# Start services
 docker-compose up -d
 ````
 
-# Stop the containers
+### 🛑 Stop services
+
 ```bash
 docker-compose down
-````
+```
 
-The **web app** will be available at:
+### 🌐 Access Application
 
 ```
 http://localhost:5555
@@ -96,61 +116,59 @@ http://localhost:5555
 ## 📂 Project Structure
 
 ```
-.
-├── ctf-hub                            # Vulnerable app folder.
-│   ├── database                            # Database container.
-|   |   ├── Dockerfile                            # Dockerfile to build Database container.
-│   │   └── scripts                               # Scripts to configure database,dummy credentials,flags.
-│   └── web                                 # Web container.
-|       ├── Dockerfile                            # Dockerfile to build the web app container. 
-│       ├── config                                # Configuration files directory. 
-│       ├── flags                                 # Flags for the challenges.
-│       ├── scripts                               # Script to configure the web app and flags.
-│       └── src                                   # Source files for the web app.
-│           ├── classes                                 # Classes for the web app.
-│           ├── css                                     # Css files for the web app.
-│           ├── img                                     # Images for the web app.
-│           ├── j0hn-th3-05int3r                        # Hidden directory with admin portal.
-│           ├── js                                      # Js files for the web app.
-│           ├── libs                                    # Library files for the web app.
-│           ├── products                                # Available products.
-│           └── templates                               # Templates to reuse.
-├── README.md                        # Readme file for the CTF-HUB coffee shop.
-├── WALKTHROGH.md                    # Walkthrogh for the challanges.
-├── LICENSE                          # LICENSE (MIT).
-├── docker-compose.yaml              # Composure file to deploy the containers (web,database).
-├── pentest                          # Pentest reports for each vulnerability
-└── imgs                             # Sample screenshots for this project.
+ctf-hub/
+├── database/              # DB container setup
+├── web/                  # Web application container
+│   ├── config/
+│   ├── flags/
+│   ├── scripts/
+│   ├── src/
+│   │   ├── classes/
+│   │   ├── css/
+│   │   ├── img/
+│   │   ├── js/
+│   │   ├── libs/
+│   │   ├── products/
+│   │   ├── templates/
+│   │   └── j0hn-th3-05int3r/   # Hidden admin panel
+├── docker-compose.yaml
+├── pentest/               # Pentest reports
+├── WALKTHROUGH.md         # Challenge walkthrough
+├── LICENSE
+└── imgs/
 ```
 
 ---
 
-## 🏴 Flags
+## 🏴 Flags & Challenges
 
-| Vulnerability                | Flag Location              |
-| ---------------------------- | -------------------------- |
-| IDOR                         | `On user id 1010`          |
-| Admin Credentials Disclosure | `Osint`                    |
-| Command Injection            | `dev-notes.txt`            |
-| LFI                          | `ma1nta1nanc3_n0t3s.js`    |
+| Vulnerability         | Flag Location           |
+| --------------------- | ----------------------- |
+| IDOR                  | User ID `1010`          |
+| Admin Credential Leak | OSINT sources           |
+| Command Injection     | `dev-notes.txt`         |
+| LFI                   | `ma1nta1nanc3_n0t3s.js` |
 
 ---
 
-## ⚠️ Legal Notice
+## ⚠️ Legal Disclaimer
 
-This project is for **educational purposes only**.
-Do **not** deploy it on a public network or use it against targets without proper authorization.
-The author is **not responsible** for any misuse or damages caused.
+This project is intended **strictly for educational purposes**.
+
+* Do not deploy in production
+* Do not expose to public networks
+* Use only in controlled environments
+
+The author assumes **no responsibility for misuse**.
 
 ---
 
 ## 📜 License
 
-This project is licensed under the [MIT License](./LICENSE).
+Licensed under the [MIT License](./LICENSE).
 
 ---
 
 <p align="center">
-  Made with ❤️ for Security Learning
-
+  Made with ❤️ for cybersecurity learning & CTF practice
 </p>
